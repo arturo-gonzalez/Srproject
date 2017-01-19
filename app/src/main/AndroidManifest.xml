@@ -23,6 +23,9 @@
         <activity android:name=".board4">
 
         </activity>
+        <activity android:name=".board7">
+
+        </activity>
 
     </application>
 

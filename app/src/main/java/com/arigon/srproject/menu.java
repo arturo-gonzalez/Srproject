@@ -27,9 +27,9 @@ public class menu extends AppCompatActivity {
 
         }
 
-        if(v.getId() == R.id.four)
+        if(v.getId() == R.id.seven)
         {
-            Intent i = new Intent(menu.this, board4.class);
+            Intent i = new Intent(menu.this, board7.class);
             startActivity(i);
 
         }
