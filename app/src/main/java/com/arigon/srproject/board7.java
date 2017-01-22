@@ -3,6 +3,7 @@
  */
 package com.arigon.srproject;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -29,27 +30,50 @@ public class board7 extends AppCompatActivity {
     String value;
     Button currButton;
 
-    Button[] boardButtons = new Button[49];
+    Button[] boardButtons = new Button[49];//array of board buttons
 
 
+
+    //this function runs when the program starts
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.board7);
 
-        final TextView alert=(TextView) findViewById(R.id.textView1);
+        final TextView alert=(TextView) findViewById(R.id.textView1);//textview that shows message
 
-        //get random numbers
-        int[] randNum = new int[25];
 
+        int[] randNum = new int[25];//array to place random numbers
+        //get random numbers which will become the numbers players can choose from
+        //todo: need to make random numbers not repeat
         for(int i = 0; i<25; i++)
         {
-            randNum[i] = (int) (Math.random() * 100);
+            boolean ifexists = false;
+            //randNum[i] = (int) (Math.random() * 100);
+            int temp = (int)(Math.random() * 99)+1;
+            for(int j = 0; j<25;j++)
+            {
+                if (randNum[j]==temp)
+                {
+                    ifexists = true;
+                    break;
+                }
+            }
+            if(!ifexists)
+            {
+                randNum[i] = temp;
+            }
         }
 
-
-
-
+        ///////////////////////////////////////////////////////////////
+        //Create buttons that contains numbers for users to choose from
+        //button1 - button27
+        //set the text to a random number from the randNum array
+        //*note* button number is one more than array index ( button1.text = randNum[0] and so on)
+        //change background color to white when clicked
+        //set clicked to true(this way we know that a button has been clicked
+        //set curButton to clicked button
+        ///////////////////////////////////////////////////////////////
         Button button1 = (Button) findViewById(R.id.button1);
         button1.setText(String.valueOf(randNum[0]));
         button1.setOnClickListener(new View.OnClickListener() {
@@ -545,11 +569,34 @@ public class board7 extends AppCompatActivity {
                 currButton = button;
 
             }
+
+
+        });
+
+        Button button27 = (Button) findViewById(R.id.button27);
+        button27.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v)
+            {
+                if(v.getId() == R.id.button27)
+                {
+                    Intent i = new Intent(board7.this, menu.class);
+                    startActivity(i);
+
+                }
+
+            }
+
+
+
         });
 
 
-
-        //< and < on board
+        /////////////////////////////////////////////////////
+        //place < and > on the specified buttons on board
+        //add buttons to the boardButton array
+        ////////////////////////////////////////////////////
         Button btn2 = (Button) findViewById(R.id.btn2);
         btn2.setText(randomSign());
         boardButtons[1] = btn2;
@@ -626,7 +673,16 @@ public class board7 extends AppCompatActivity {
 
 
 
-        //board buttons
+        ////////////////////////////////////////////////////////
+        //create clickable buttons where numbers will be displayed
+        //btn1-btn49 (only buttons taht don't contain < or >
+        //add buttons to boardButton array
+        //set onClickListener
+        //if clicked is true and the button is empty and its checkIfValid is true
+        // place number in button
+        //  set clicked to false
+        //  disable currButton so it can't be clicked anymore
+        /////////////////////////////////////////////////////////
         Button btn1 = (Button) findViewById(R.id.btn1);
         boardButtons[0] = btn1;
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -1104,6 +1160,10 @@ public class board7 extends AppCompatActivity {
         });
     }
 
+
+    ///////////////////////////////////////////////////////////////////
+    //randomString generates a random < or >
+    ///////////////////////////////////////////////////////////////////
     public String randomSign(){
         String v;
         int x = (int) (Math.random() * 2);
@@ -1115,13 +1175,18 @@ public class board7 extends AppCompatActivity {
         return v;
     }
 
+    ///////////////////////////////////////////////////////////////////
+    //checkIfValid checks if it is ok to place a number in a given spot
+    //return true if its ok to place the number
+    //return false if not
+    ///////////////////////////////////////////////////////////////////
     public Boolean checkIfValid(Button button, TextView alert)
     {
-        for(int i = 0; i<49; i++)
+        for(int i = 0; i<49; i++)//find the button in the array
         {
-            if(boardButtons[i] == button)
+            if(boardButtons[i] == button)//if button is in the array
             {
-                //1 and 9
+                //check if it is ok to place a number on slots 1 and 9
                 if(boardButtons[i]==boardButtons[0]||boardButtons[i]==boardButtons[8])
                 {
                     if(boardButtons[i+2].getText()==""&&boardButtons[i+14].getText()=="")
@@ -1257,7 +1322,7 @@ public class board7 extends AppCompatActivity {
 
                     }
                 }
-                //rest of first and second row
+                //check if it is ok to place a number on the rest of first and second row
                 else if(boardButtons[i]==boardButtons[2]||boardButtons[i]==boardButtons[4]||boardButtons[i]==boardButtons[10])
                 {
                     if(boardButtons[i-2].getText()==""&&boardButtons[i+2].getText()==""&&boardButtons[i+14].getText()=="")
@@ -1549,7 +1614,7 @@ public class board7 extends AppCompatActivity {
 
                     }
                 }
-                //last button on first row (7 and 13)
+                //check if it is ok to place a number on button 7 and 13
                 else if(boardButtons[i]==boardButtons[6]||boardButtons[i]==boardButtons[12])
                 {
                     if(boardButtons[i-2].getText()==""&&boardButtons[i+14].getText()=="")
@@ -1687,7 +1752,7 @@ public class board7 extends AppCompatActivity {
                 }
 
 
-                //two leftmost columns
+                //check if it is ok to place a number on the two leftmost columns
                 else if(boardButtons[i]==boardButtons[14]||boardButtons[i]==boardButtons[28]||boardButtons[i]==boardButtons[22])
                 {
                     if(boardButtons[i-14].getText()==""&&boardButtons[i+2].getText()==""&&boardButtons[i+14].getText()=="")
@@ -1980,7 +2045,7 @@ public class board7 extends AppCompatActivity {
                     }
                 }
 
-                //two rightmost columns
+                //check if it is ok to place a number on the two rightmost columns
                 else if(boardButtons[i]==boardButtons[20]||boardButtons[i]==boardButtons[26]||boardButtons[i]==boardButtons[34])
                 {
                     if(boardButtons[i-14].getText()==""&&boardButtons[i-2].getText()==""&&boardButtons[i+14].getText()=="")
@@ -2272,7 +2337,7 @@ public class board7 extends AppCompatActivity {
 
                     }
                 }
-                //37 and 43 bottom left  corner buttons
+                //check if it is ok to place a number on slots 37 and 43 bottom left  corner buttons
                 else if(boardButtons[i]==boardButtons[42]||boardButtons[i]==boardButtons[36])
                 {
                     if(boardButtons[i-14].getText()==""&&boardButtons[i+2].getText()=="")
@@ -2409,7 +2474,7 @@ public class board7 extends AppCompatActivity {
                     }
                 }
 
-                //41 and 49 bottom right corner
+                //check if it is ok to place a number on slots 41 and 49 bottom right corner
                 else if(boardButtons[i]==boardButtons[40]||boardButtons[i]==boardButtons[48])
                 {
                     if(boardButtons[i-2].getText()==""&&boardButtons[i-14].getText()=="")
@@ -2546,7 +2611,7 @@ public class board7 extends AppCompatActivity {
                     }
                 }
 
-                //rest of last two rows
+                //check if it is ok to place a number on the rest of last two rows
                 else if(boardButtons[i]==boardButtons[38]||boardButtons[i]==boardButtons[44]||boardButtons[i]==boardButtons[46])
                 {
                     if(boardButtons[i-14].getText()==""&&boardButtons[i+2].getText()==""&&boardButtons[i-2].getText()=="")
@@ -2839,13 +2904,14 @@ public class board7 extends AppCompatActivity {
                     }
                 }
 
-                //inner buttons ///todo:innerbuttons
+                //check if it is ok to place a number on the inner buttons ///todo:innerbuttons
                 else
                 {
                     if(boardButtons[i-14].getText()==""&&boardButtons[i+2].getText()==""&&boardButtons[i-2].getText()==""&&boardButtons[i+14].getText()=="")
                     {
                         return true;
                     }
+
                     if(boardButtons[i-14].getText()==""&&boardButtons[i+2].getText()==""&&boardButtons[i-2].getText()==""&&boardButtons[i+14].getText()=="")
                     {
                         return true;
