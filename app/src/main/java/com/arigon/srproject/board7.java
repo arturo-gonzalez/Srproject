@@ -11,24 +11,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-
-
-
-import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
-import java.util.Random;
-
-
 public class board7 extends AppCompatActivity {
     boolean clicked = false;
     String value;
     Button currButton;
+    //players turn
+    int turn = 1;
 
     Button[] boardButtons = new Button[49];//array of board buttons
 
@@ -41,6 +29,10 @@ public class board7 extends AppCompatActivity {
         setContentView(R.layout.board7);
 
         final TextView alert=(TextView) findViewById(R.id.textView1);//textview that shows message
+
+
+
+
 
 
         int[] randNum = new int[25];//array to place random numbers
@@ -683,7 +675,7 @@ public class board7 extends AppCompatActivity {
         //  set clicked to false
         //  disable currButton so it can't be clicked anymore
         /////////////////////////////////////////////////////////
-        Button btn1 = (Button) findViewById(R.id.btn1);
+        final Button btn1 = (Button) findViewById(R.id.btn1);
         boardButtons[0] = btn1;
         btn1.setOnClickListener(new View.OnClickListener() {
 
@@ -692,17 +684,18 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
+
                 }
-
-
-
-
             }
         });
-        Button btn3 = (Button) findViewById(R.id.btn3);
+        final Button btn3 = (Button) findViewById(R.id.btn3);
         boardButtons[2] = btn3;
         btn3.setOnClickListener(new View.OnClickListener() {
 
@@ -711,14 +704,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn5 = (Button) findViewById(R.id.btn5);
@@ -730,14 +723,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn7 = (Button) findViewById(R.id.btn7);
@@ -749,14 +742,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn9 = (Button) findViewById(R.id.btn9);
@@ -768,14 +761,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn11 = (Button) findViewById(R.id.btn11);
@@ -787,14 +780,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn13 = (Button) findViewById(R.id.btn13);
@@ -806,14 +799,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn15 = (Button) findViewById(R.id.btn15);
@@ -825,14 +818,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn17 = (Button) findViewById(R.id.btn17);
@@ -844,14 +837,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn19 = (Button) findViewById(R.id.btn19);
@@ -863,14 +856,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn21 = (Button) findViewById(R.id.btn21);
@@ -882,14 +875,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn23 = (Button) findViewById(R.id.btn23);
@@ -901,14 +894,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn25 = (Button) findViewById(R.id.btn25);
@@ -920,14 +913,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn27 = (Button) findViewById(R.id.btn27);
@@ -939,14 +932,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn29 = (Button) findViewById(R.id.btn29);
@@ -958,14 +951,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn31 = (Button) findViewById(R.id.btn31);
@@ -977,14 +970,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert ))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn33= (Button) findViewById(R.id.btn33);
@@ -996,14 +989,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn35 = (Button) findViewById(R.id.btn35);
@@ -1015,14 +1008,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn37 = (Button) findViewById(R.id.btn37);
@@ -1034,14 +1027,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn39 = (Button) findViewById(R.id.btn39);
@@ -1053,14 +1046,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn41 = (Button) findViewById(R.id.btn41);
@@ -1072,14 +1065,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn43= (Button) findViewById(R.id.btn43);
@@ -1091,14 +1084,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn45 = (Button) findViewById(R.id.btn45);
@@ -1110,14 +1103,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
-
             }
         });
         Button btn47 = (Button) findViewById(R.id.btn47);
@@ -1129,13 +1122,14 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
 
             }
         });
@@ -1148,16 +1142,45 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
+                    if(turn ==1)
+                    {
+                        btn.setText(value);
+                        clicked = false;
+                        currButton.setEnabled(false);
+                        turn =2;
+                    }
                 }
-
-
-
 
             }
         });
+
+
+        ////////////////////////////////////////////
+        //cp thread
+        //runs when turn == 2 (computer player turn)
+        //todo: work on computers choice of number and placing on board
+        ////////////////////////////////////////////
+        Thread t = new Thread() {
+
+            @Override
+            public void run() {
+                try {
+                    while (!isInterrupted()) {
+                        Thread.sleep(1000);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if(turn ==2)
+                                btn3.setText("1"); //just a test
+                                turn = 1;
+                            }
+                        });
+                    }
+                } catch (InterruptedException e) {
+                }
+            }
+        };
+    t.start();
     }
 
 
