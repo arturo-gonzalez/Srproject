@@ -1,6 +1,4 @@
-/**
- * Created by art on 1/18/2017.
- */
+
 package com.arigon.srproject;
 
 import android.content.Intent;
@@ -8,10 +6,12 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class board7 extends AppCompatActivity {
+public class singleplayer extends AppCompatActivity {
     boolean clicked = false;
     String value;
     Button currButton;
@@ -26,9 +26,12 @@ public class board7 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.board7);
 
         final TextView alert=(TextView) findViewById(R.id.textView1);//textview that shows message
+
 
         int[] avnum = new int[25];//array to place random numbers
         //get random numbers which will become the numbers players can choose from
@@ -36,7 +39,6 @@ public class board7 extends AppCompatActivity {
         for(int i = 0; i<25; i++)
         {
             avnum[i] =  i+1;
-
         }
 
         ///////////////////////////////////////////////////////////////
@@ -555,7 +557,7 @@ public class board7 extends AppCompatActivity {
             {
                 if(v.getId() == R.id.button27)
                 {
-                    Intent i = new Intent(board7.this, menu.class);
+                    Intent i = new Intent(singleplayer.this, menu.class);
                     startActivity(i);
 
                 }
@@ -1153,7 +1155,7 @@ public class board7 extends AppCompatActivity {
                             @Override
                             public void run() {
                                 if(turn ==2)
-                                btn3.setText("1"); //just a test
+                                    btn3.setText("1"); //just a test
                                 turn = 1;
                             }
                         });
@@ -1162,7 +1164,7 @@ public class board7 extends AppCompatActivity {
                 }
             }
         };
-    t.start();
+        t.start();
     }
 
 

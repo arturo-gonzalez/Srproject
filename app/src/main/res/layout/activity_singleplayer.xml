@@ -1088,14 +1088,14 @@
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
-            android:id="@+id/button3"
+            android:id="@+id/button4"
             android:background="@color/grey"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_height="30dp"
             android:layout_weight="1"
-            android:id="@+id/button4"
+            android:id="@+id/button3"
             android:background="@color/grey"/>
 
         <Button

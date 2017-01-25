@@ -35,6 +35,15 @@
             android:id="@+id/eight"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/single"
+            android:onClick="click"
+            android:id="@+id/single"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"/>
     </LinearLayout>
 
 </LinearLayout>
