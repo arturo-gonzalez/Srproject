@@ -2107,12 +2107,12 @@ public class board7 extends AppCompatActivity {
                         }
                         else if(boardButtons[i-1].getText()=="<")
                         {
-                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-2].getText())))
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-2].getText())))
                             {
                                 alert.setText("");
                                 return true;
                             }
-                            else if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-2].getText())))
+                            else if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-2].getText())))
                             {
                                 alert.setText("Can't place that number there");
                                 return false;
