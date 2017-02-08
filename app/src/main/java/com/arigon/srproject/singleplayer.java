@@ -970,6 +970,7 @@ public class singleplayer extends AppCompatActivity {
 
         //boolean variable used in loop to test if a board is acceptable
         boolean acceptable = false;
+        int count = 0;
         /////////////////////////////////////////////////
         ////////////////////////////////////////////////
         //loop to test if board is acceptable
@@ -1040,7 +1041,7 @@ public class singleplayer extends AppCompatActivity {
                 if (boardButtons[i] == boardButtons[9] || boardButtons[i] == boardButtons[11] || boardButtons[i] == boardButtons[15] || boardButtons[i] == boardButtons[17] || boardButtons[i] == boardButtons[19] || boardButtons[i] == boardButtons[23] || boardButtons[i] == boardButtons[25] || boardButtons[i] == boardButtons[29] || boardButtons[i] == boardButtons[31] || boardButtons[i] == boardButtons[33] || boardButtons[i] == boardButtons[37] || boardButtons[i] == boardButtons[39]) {
                     if (Integer.parseInt(String.valueOf(boardButtons[i - 7].getText())) > Integer.parseInt(String.valueOf(boardButtons[i + 7].getText())) && Integer.parseInt(String.valueOf(boardButtons[i - 1].getText())) > Integer.parseInt(String.valueOf(boardButtons[i + 1].getText()))) {
                         boardButtons[i].setText(">");
-                    } else if (Integer.parseInt(String.valueOf(boardButtons[i - 7].getText())) > Integer.parseInt(String.valueOf(boardButtons[i + 7].getText())) && Integer.parseInt(String.valueOf(boardButtons[i - 1].getText())) < Integer.parseInt(String.valueOf(boardButtons[i + 1].getText())))
+                    } else if (Integer.parseInt(String.valueOf(boardButtons[i - 7].getText())) < Integer.parseInt(String.valueOf(boardButtons[i + 7].getText())) && Integer.parseInt(String.valueOf(boardButtons[i - 1].getText())) < Integer.parseInt(String.valueOf(boardButtons[i + 1].getText())))
 
                     {
                         boardButtons[i].setText("<");
@@ -1054,10 +1055,16 @@ public class singleplayer extends AppCompatActivity {
             {
                 acceptable = true;
             }
+
+            //count number of iterations
+            count++;
         }
+        alert.setText(String.valueOf(count));
 
 
         //remove numbers from board
+
+        /*
         for(int i=1; i<50; i++)
         {
             if(i%2 ==1)//check if it is a light button(odd number on board)
@@ -1075,6 +1082,7 @@ public class singleplayer extends AppCompatActivity {
 
             }
         }
+        */
 
     }
 }
