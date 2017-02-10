@@ -50,505 +50,6 @@ public class singleplayer extends AppCompatActivity {
             avnum[i] = i + 1;
         }
 
-        ///////////////////////////////////////////////////////////////
-        //Create buttons that contains numbers for users to choose from
-        //button1 - button27
-        //set the text to a number from 1-n
-        //*note* button number is one more than array index ( button1.text = avnum[0] and so on)
-        //change background color to white when clicked
-        //set clicked to true(this way we know that a button has been clicked
-        //set curButton to clicked button
-        ///////////////////////////////////////////////////////////////
-        Button button1 = (Button) findViewById(R.id.button1);
-        button1.setText(String.valueOf(avnum[0]));
-        button1.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button2 = (Button) findViewById(R.id.button2);
-        button2.setText(String.valueOf(avnum[1]));
-        button2.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button3 = (Button) findViewById(R.id.button3);
-        button3.setText(String.valueOf(avnum[2]));
-        button3.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button4 = (Button) findViewById(R.id.button4);
-        button4.setText(String.valueOf(avnum[3]));
-        button4.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button5 = (Button) findViewById(R.id.button5);
-        button5.setText(String.valueOf(avnum[4]));
-        button5.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button6 = (Button) findViewById(R.id.button6);
-        button6.setText(String.valueOf(avnum[5]));
-        button6.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button7 = (Button) findViewById(R.id.button7);
-        button7.setText(String.valueOf(avnum[6]));
-        button7.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button8 = (Button) findViewById(R.id.button8);
-        button8.setText(String.valueOf(avnum[7]));
-        button8.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button9 = (Button) findViewById(R.id.button9);
-        button9.setText(String.valueOf(avnum[8]));
-        button9.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button10 = (Button) findViewById(R.id.button10);
-        button10.setText(String.valueOf(avnum[9]));
-        button10.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button11 = (Button) findViewById(R.id.button11);
-        button11.setText(String.valueOf(avnum[10]));
-        button11.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button12 = (Button) findViewById(R.id.button12);
-        button12.setText(String.valueOf(avnum[11]));
-        button12.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button13 = (Button) findViewById(R.id.button13);
-        button13.setText(String.valueOf(avnum[12]));
-        button13.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button14 = (Button) findViewById(R.id.button14);
-        button14.setText(String.valueOf(avnum[13]));
-        button14.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button15 = (Button) findViewById(R.id.button15);
-        button15.setText(String.valueOf(avnum[14]));
-        button15.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button16 = (Button) findViewById(R.id.button16);
-        button16.setText(String.valueOf(avnum[15]));
-        button16.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button17 = (Button) findViewById(R.id.button17);
-        button17.setText(String.valueOf(avnum[16]));
-        button17.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button18 = (Button) findViewById(R.id.button18);
-        button18.setText(String.valueOf(avnum[17]));
-        button18.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button19 = (Button) findViewById(R.id.button19);
-        button19.setText(String.valueOf(avnum[18]));
-        button19.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button20 = (Button) findViewById(R.id.button20);
-        button20.setText(String.valueOf(avnum[19]));
-        button20.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button21 = (Button) findViewById(R.id.button21);
-        button21.setText(String.valueOf(avnum[20]));
-        button21.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button22 = (Button) findViewById(R.id.button22);
-        button22.setText(String.valueOf(avnum[21]));
-        button22.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button23 = (Button) findViewById(R.id.button23);
-        button23.setText(String.valueOf(avnum[22]));
-        button23.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button24 = (Button) findViewById(R.id.button24);
-        button24.setText(String.valueOf(avnum[23]));
-        button24.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-
-                clicked = true;
-                currButton = button;
-
-            }
-        });
-        Button button25 = (Button) findViewById(R.id.button25);
-        button25.setText(String.valueOf(avnum[24]));
-        button25.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (clicked) {
-                    currButton.setBackgroundColor(Color.GRAY);
-                }
-                Button button = (Button) v;
-                value = button.getText().toString();
-                button.setBackgroundColor(Color.WHITE);
-
-                clicked = true;
-                currButton = button;
-
-            }
-
-
-        });
-
-        Button button27 = (Button) findViewById(R.id.button27);
-        button27.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (v.getId() == R.id.button27) {
-                    Intent i = new Intent(singleplayer.this, menu.class);
-                    startActivity(i);
-
-                }
-
-            }
-
-
-        });
-
 
         ////////////////////////////////////////////////////////
         //create clickable buttons where numbers will be displayed
@@ -1061,10 +562,9 @@ public class singleplayer extends AppCompatActivity {
         }
         alert.setText(String.valueOf(count));
 
-
-        //remove numbers from board
-
-        /*
+        //////////////////////////////////////////////////
+        //remove some numbers from board
+        /////////////////////////////////////////////////
         for(int i=1; i<50; i++)
         {
             if(i%2 ==1)//check if it is a light button(odd number on board)
@@ -1082,7 +582,506 @@ public class singleplayer extends AppCompatActivity {
 
             }
         }
-        */
+
+        ///////////////////////////////////////////////////////////////
+        //Create buttons that contains numbers for users to choose from
+        //button1 - button27
+        //set the text to a number from 1-n
+        //*note* button number is one more than array index ( button1.text = avnum[0] and so on)
+        //change background color to white when clicked
+        //set clicked to true(this way we know that a button has been clicked
+        //set curButton to clicked button
+        ///////////////////////////////////////////////////////////////
+        Button button1 = (Button) findViewById(R.id.button1);
+        button1.setText(String.valueOf(avnum[0]));
+        button1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button2 = (Button) findViewById(R.id.button2);
+        button2.setText(String.valueOf(avnum[1]));
+        button2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button3 = (Button) findViewById(R.id.button3);
+        button3.setText(String.valueOf(avnum[2]));
+        button3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button4 = (Button) findViewById(R.id.button4);
+        button4.setText(String.valueOf(avnum[3]));
+        button4.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button5 = (Button) findViewById(R.id.button5);
+        button5.setText(String.valueOf(avnum[4]));
+        button5.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button6 = (Button) findViewById(R.id.button6);
+        button6.setText(String.valueOf(avnum[5]));
+        button6.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button7 = (Button) findViewById(R.id.button7);
+        button7.setText(String.valueOf(avnum[6]));
+        button7.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button8 = (Button) findViewById(R.id.button8);
+        button8.setText(String.valueOf(avnum[7]));
+        button8.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button9 = (Button) findViewById(R.id.button9);
+        button9.setText(String.valueOf(avnum[8]));
+        button9.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button10 = (Button) findViewById(R.id.button10);
+        button10.setText(String.valueOf(avnum[9]));
+        button10.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button11 = (Button) findViewById(R.id.button11);
+        button11.setText(String.valueOf(avnum[10]));
+        button11.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button12 = (Button) findViewById(R.id.button12);
+        button12.setText(String.valueOf(avnum[11]));
+        button12.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button13 = (Button) findViewById(R.id.button13);
+        button13.setText(String.valueOf(avnum[12]));
+        button13.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button14 = (Button) findViewById(R.id.button14);
+        button14.setText(String.valueOf(avnum[13]));
+        button14.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button15 = (Button) findViewById(R.id.button15);
+        button15.setText(String.valueOf(avnum[14]));
+        button15.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button16 = (Button) findViewById(R.id.button16);
+        button16.setText(String.valueOf(avnum[15]));
+        button16.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button17 = (Button) findViewById(R.id.button17);
+        button17.setText(String.valueOf(avnum[16]));
+        button17.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button18 = (Button) findViewById(R.id.button18);
+        button18.setText(String.valueOf(avnum[17]));
+        button18.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button19 = (Button) findViewById(R.id.button19);
+        button19.setText(String.valueOf(avnum[18]));
+        button19.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button20 = (Button) findViewById(R.id.button20);
+        button20.setText(String.valueOf(avnum[19]));
+        button20.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button21 = (Button) findViewById(R.id.button21);
+        button21.setText(String.valueOf(avnum[20]));
+        button21.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button22 = (Button) findViewById(R.id.button22);
+        button22.setText(String.valueOf(avnum[21]));
+        button22.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button23 = (Button) findViewById(R.id.button23);
+        button23.setText(String.valueOf(avnum[22]));
+        button23.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button24 = (Button) findViewById(R.id.button24);
+        button24.setText(String.valueOf(avnum[23]));
+        button24.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+
+                clicked = true;
+                currButton = button;
+
+            }
+        });
+        Button button25 = (Button) findViewById(R.id.button25);
+        button25.setText(String.valueOf(avnum[24]));
+        button25.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (clicked) {
+                    currButton.setBackgroundColor(Color.GRAY);
+                }
+                Button button = (Button) v;
+                value = button.getText().toString();
+                button.setBackgroundColor(Color.WHITE);
+
+                clicked = true;
+                currButton = button;
+
+            }
+
+
+        });
+
+        Button button27 = (Button) findViewById(R.id.button27);
+        button27.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (v.getId() == R.id.button27) {
+                    Intent i = new Intent(singleplayer.this, menu.class);
+                    startActivity(i);
+
+                }
+
+            }
+
+
+        });
+
 
     }
 }
