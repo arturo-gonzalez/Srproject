@@ -1100,7 +1100,6 @@ public class singleplayer extends AppCompatActivity {
                     Intent i = new Intent(singleplayer.this, menu.class);
                     startActivity(i);
                 }
-
             }
 
 
