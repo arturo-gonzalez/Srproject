@@ -1099,7 +1099,6 @@ public class singleplayer extends AppCompatActivity {
                 if (v.getId() == R.id.button27) {
                     Intent i = new Intent(singleplayer.this, menu.class);
                     startActivity(i);
-
                 }
 
             }
