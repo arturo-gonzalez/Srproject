@@ -30,19 +30,15 @@ public class board7 extends AppCompatActivity {
 
         final TextView alert=(TextView) findViewById(R.id.textView1);//textview that shows message
 
-        int[] avnum = new int[25];//array to place random numbers
-        //get random numbers which will become the numbers players can choose from
-        //todo: need to make random numbers not repeat
+        int[] avnum = new int[25];//player choice numbers
         for(int i = 0; i<25; i++)
         {
             avnum[i] =  i+1;
-
         }
 
         ///////////////////////////////////////////////////////////////
         //Create buttons that contains numbers for users to choose from
         //button1 - button27
-        //set the text to a random number from the avnum array
         //*note* button number is one more than array index ( button1.text = avnum[0] and so on)
         //change background color to white when clicked
         //set clicked to true(this way we know that a button has been clicked

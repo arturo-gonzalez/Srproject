@@ -594,6 +594,7 @@ public class singleplayer extends AppCompatActivity {
         ///////////////////////////////////////////////////////////////
         Button button1 = (Button) findViewById(R.id.button1);
         button1.setText(String.valueOf(avnum[0]));
+        onBoard(button1);
         button1.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -612,6 +613,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button2 = (Button) findViewById(R.id.button2);
         button2.setText(String.valueOf(avnum[1]));
+        onBoard(button2);
         button2.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -631,6 +633,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button3 = (Button) findViewById(R.id.button3);
         button3.setText(String.valueOf(avnum[2]));
+        onBoard(button3);
         button3.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -650,6 +653,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button4 = (Button) findViewById(R.id.button4);
         button4.setText(String.valueOf(avnum[3]));
+        onBoard(button4);
         button4.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -669,6 +673,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button5 = (Button) findViewById(R.id.button5);
         button5.setText(String.valueOf(avnum[4]));
+        onBoard(button5);
         button5.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -688,6 +693,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button6 = (Button) findViewById(R.id.button6);
         button6.setText(String.valueOf(avnum[5]));
+        onBoard(button6);
         button6.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -707,6 +713,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button7 = (Button) findViewById(R.id.button7);
         button7.setText(String.valueOf(avnum[6]));
+        onBoard(button7);
         button7.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -726,6 +733,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button8 = (Button) findViewById(R.id.button8);
         button8.setText(String.valueOf(avnum[7]));
+        onBoard(button8);
         button8.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -745,6 +753,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button9 = (Button) findViewById(R.id.button9);
         button9.setText(String.valueOf(avnum[8]));
+        onBoard(button9);
         button9.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -763,6 +772,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button10 = (Button) findViewById(R.id.button10);
         button10.setText(String.valueOf(avnum[9]));
+        onBoard(button10);
         button10.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -782,6 +792,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button11 = (Button) findViewById(R.id.button11);
         button11.setText(String.valueOf(avnum[10]));
+        onBoard(button11);
         button11.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -801,6 +812,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button12 = (Button) findViewById(R.id.button12);
         button12.setText(String.valueOf(avnum[11]));
+        onBoard(button12);
         button12.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -820,6 +832,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button13 = (Button) findViewById(R.id.button13);
         button13.setText(String.valueOf(avnum[12]));
+        onBoard(button13);
         button13.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -839,6 +852,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button14 = (Button) findViewById(R.id.button14);
         button14.setText(String.valueOf(avnum[13]));
+        onBoard(button14);
         button14.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -858,6 +872,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button15 = (Button) findViewById(R.id.button15);
         button15.setText(String.valueOf(avnum[14]));
+        onBoard(button15);
         button15.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -877,6 +892,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button16 = (Button) findViewById(R.id.button16);
         button16.setText(String.valueOf(avnum[15]));
+        onBoard(button16);
         button16.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -896,6 +912,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button17 = (Button) findViewById(R.id.button17);
         button17.setText(String.valueOf(avnum[16]));
+        onBoard(button17);
         button17.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -914,6 +931,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button18 = (Button) findViewById(R.id.button18);
         button18.setText(String.valueOf(avnum[17]));
+        onBoard(button18);
         button18.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -933,6 +951,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button19 = (Button) findViewById(R.id.button19);
         button19.setText(String.valueOf(avnum[18]));
+        onBoard(button19);
         button19.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -952,6 +971,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button20 = (Button) findViewById(R.id.button20);
         button20.setText(String.valueOf(avnum[19]));
+        onBoard(button20);
         button20.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -971,6 +991,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button21 = (Button) findViewById(R.id.button21);
         button21.setText(String.valueOf(avnum[20]));
+        onBoard(button21);
         button21.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -990,6 +1011,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button22 = (Button) findViewById(R.id.button22);
         button22.setText(String.valueOf(avnum[21]));
+        onBoard(button22);
         button22.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -1009,6 +1031,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button23 = (Button) findViewById(R.id.button23);
         button23.setText(String.valueOf(avnum[22]));
+        onBoard(button23);
         button23.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -1028,6 +1051,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button24 = (Button) findViewById(R.id.button24);
         button24.setText(String.valueOf(avnum[23]));
+        onBoard(button24);
         button24.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -1047,6 +1071,7 @@ public class singleplayer extends AppCompatActivity {
         });
         Button button25 = (Button) findViewById(R.id.button25);
         button25.setText(String.valueOf(avnum[24]));
+        onBoard(button25);
         button25.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -1082,6 +1107,19 @@ public class singleplayer extends AppCompatActivity {
 
         });
 
+
+    }
+
+    public void onBoard(Button btn)
+    {
+        for(int i = 0; i<49; i++)
+        {
+            if(removedButtons[i]!=null &&removedButtons[i].getText()== btn.getText())
+            {
+                btn.setBackgroundColor(Color.WHITE);
+                btn.setEnabled(false);
+            }
+        }
 
     }
 }
