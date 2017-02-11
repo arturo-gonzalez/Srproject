@@ -20,13 +20,6 @@ public class menu extends AppCompatActivity {
 
     public void click(View v)
     {
-        //go to the 8x8 board when button is clicked
-        if(v.getId() == R.id.eight)
-        {
-            Intent i = new Intent(menu.this, MainActivity.class);
-            startActivity(i);
-
-        }
 
         //go to the 7x7 board when button is clicked
         if(v.getId() == R.id.seven)

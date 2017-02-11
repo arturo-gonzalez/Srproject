@@ -1151,6 +1151,9 @@ public class board7 extends AppCompatActivity {
                                 if(turn ==2)
                                 btn3.setText("1"); //just a test
                                 turn = 1;
+
+                                //call AI function
+
                             }
                         });
                     }
@@ -2927,6 +2930,23 @@ public class board7 extends AppCompatActivity {
             }
         }
         return false;
+
+    }
+
+
+    //TODO: Minimax fnction
+    void minimax()
+    {
+
+    }
+
+    void maxValue()
+    {
+
+    }
+
+    void minValue()
+    {
 
     }
 
