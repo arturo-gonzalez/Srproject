@@ -11,15 +11,37 @@
     android:background="@color/background"
     tools:context="com.arigon.srproject.board7">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:id="@+id/textView1"
-        android:background="@color/bg"
-        android:textStyle="bold"
-        android:textColor="?attr/colorControlNormal"
-        android:textSize="24dp"
-        android:padding="5dp"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:id="@+id/linearLayout0"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1"
+            android:layout_weight="1"
+            android:background="@color/bg"
+            android:textStyle="bold"
+            android:textColor="?attr/colorControlNormal"
+            android:textSize="24dp"
+            android:padding="5dp"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/timerValue"
+            android:layout_weight="1"
+            android:background="@color/bg"
+            android:textStyle="bold"
+            android:textColor="?attr/colorControlNormal"
+            android:textSize="24dp"
+            android:padding="5dp"/>
+
+    </LinearLayout>
 
 
     <LinearLayout
@@ -28,7 +50,7 @@
         android:orientation="horizontal"
         android:weightSum="7"
         android:id="@+id/linearLayout1"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/linearLayout0"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 

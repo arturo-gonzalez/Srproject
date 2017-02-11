@@ -4,6 +4,8 @@ package com.arigon.srproject;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
@@ -34,13 +36,24 @@ public class singleplayer extends AppCompatActivity {
             R.id.btn46,R.id.btn47,R.id.btn48,R.id.btn49};//array of ids
 
 
+    ////////////////////////////////////////
+    ///time
+    ///////////////////////////////////////
+    private TextView timerValue;
+    private long startTime = 0L;
+    private Handler customHandler = new Handler();
+    long timeInMilliseconds = 0L;
+    long timeSwapBuff = 0L;
+    long updatedTime = 0L;
+
+
     //this function runs when the program starts
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.board7);
+        setContentView(R.layout.activity_singleplayer);
 
         final TextView alert = (TextView) findViewById(R.id.textView1);//textview that shows message
 
@@ -49,6 +62,13 @@ public class singleplayer extends AppCompatActivity {
         for (int i = 0; i < 25; i++) {
             avnum[i] = i + 1;
         }
+
+        ///////////////////////////////////////////
+        //timer
+        //////////////////////////////////////////
+        timerValue = (TextView) findViewById(R.id.timerValue);
+        startTime = SystemClock.uptimeMillis();
+        customHandler.postDelayed(updateTimerThread, 0);
 
 
         ////////////////////////////////////////////////////////
@@ -1107,6 +1127,25 @@ public class singleplayer extends AppCompatActivity {
 
     }
 
+
+    private Runnable updateTimerThread = new Runnable() {
+
+        public void run() {
+
+            timeInMilliseconds = SystemClock.uptimeMillis() - startTime;
+
+            updatedTime = timeSwapBuff + timeInMilliseconds;
+
+            int secs = (int) (updatedTime / 1000);
+            int mins = secs / 60;
+            secs = secs % 60;
+            timerValue.setText("" + mins + ":"
+                    + String.format("%02d", secs));
+            customHandler.postDelayed(this, 0);
+        }
+
+    };
+
     public void onBoard(Button btn)
     {
         for(int i = 0; i<49; i++)
@@ -1117,6 +1156,11 @@ public class singleplayer extends AppCompatActivity {
                 btn.setEnabled(false);
             }
         }
+
+    }
+
+    public void win()
+    {
 
     }
 }
