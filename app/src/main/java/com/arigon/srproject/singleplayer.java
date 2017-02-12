@@ -1,6 +1,9 @@
 
 package com.arigon.srproject;
 
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -22,6 +25,7 @@ public class singleplayer extends AppCompatActivity {
     boolean clicked = false;
     String value;
     Button currButton;
+    private TextView alert;
     //players turn
     int turn = 1;
 
@@ -55,7 +59,8 @@ public class singleplayer extends AppCompatActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_singleplayer);
 
-        final TextView alert = (TextView) findViewById(R.id.textView1);//textview that shows message
+        //final TextView
+        alert = (TextView) findViewById(R.id.textView1);//textview that shows message
 
 
         int[] avnum = new int[25];
@@ -91,6 +96,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -1161,6 +1167,23 @@ public class singleplayer extends AppCompatActivity {
 
     public void win()
     {
+        boolean full = true;
+        for(int i=0;i<49;i++)
+        {
+            if(boardButtons[i].getText()=="")
+            {
+                full = false;
+            }
+
+        }
+        if(full)
+        {
+            timeSwapBuff += timeInMilliseconds;
+            customHandler.removeCallbacks(updateTimerThread);
+
+            alert.setText("You Win");
+            
+        }
 
     }
 }
