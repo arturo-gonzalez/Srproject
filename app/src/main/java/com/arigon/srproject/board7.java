@@ -1613,8 +1613,126 @@ public class board7 extends AppCompatActivity {
                         }
 
                     }
-                    else if(boardButtons[i-2].getText()!=""&&boardButtons[i+2].getText()!=""&&boardButtons[i+14].getText()!="")//todo top
+                    else if(boardButtons[i-2].getText()!=""&&boardButtons[i+2].getText()!=""&&boardButtons[i+14].getText()!="")
                     {
+                        if(boardButtons[i-1].getText()==">"&&boardButtons[i+7].getText()==">"&&boardButtons[i+1].getText()==">")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+2].getText())))
+                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+                        }
+                        else if(boardButtons[i-1].getText()=="<"&&boardButtons[i+7].getText()=="<"&&boardButtons[i+1].getText()=="<")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+2].getText())))
+                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-1].getText()==">"&&boardButtons[i+7].getText()==">"&&boardButtons[i+1].getText()=="<")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+2].getText())))
+                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+                        }
+                        else if(boardButtons[i-1].getText()==">"&&boardButtons[i+7].getText()=="<"&&boardButtons[i+1].getText()==">")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+2].getText())))
+                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-1].getText()=="<"&&boardButtons[i+7].getText()==">"&&boardButtons[i+1].getText()==">")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+2].getText())))
+                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-1].getText()==">"&&boardButtons[i+7].getText()=="<"&&boardButtons[i+1].getText()=="<")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+2].getText())))
+                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-1].getText()=="<"&&boardButtons[i+7].getText()=="<"&&boardButtons[i+1].getText()=="<")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+2].getText())))
+                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-1].getText()=="<"&&boardButtons[i+7].getText()=="<"&&boardButtons[i+1].getText()==">")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+2].getText())))
+                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
 
                     }
                 }
@@ -2043,8 +2161,126 @@ public class board7 extends AppCompatActivity {
                         }
 
                     }
-                    else if(boardButtons[i-14].getText()!=""&&boardButtons[i+2].getText()!=""&&boardButtons[i+14].getText()!="")//todo left
+                    else if(boardButtons[i-14].getText()!=""&&boardButtons[i+2].getText()!=""&&boardButtons[i+14].getText()!="")
                     {
+                        if(boardButtons[i-7].getText()==">"&&boardButtons[i+1].getText()==">"&&boardButtons[i+7].getText()==">")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
+                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+                        }
+                        else if(boardButtons[i-7].getText()=="<"&&boardButtons[i+1].getText()=="<"&&boardButtons[i+7].getText()=="<")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
+                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-7].getText()==">"&&boardButtons[i+1].getText()==">"&&boardButtons[i+7].getText()=="<")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
+                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+                        }
+                        else if(boardButtons[i-7].getText()==">"&&boardButtons[i+1].getText()=="<"&&boardButtons[i+7].getText()==">")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
+                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-7].getText()=="<"&&boardButtons[i+1].getText()==">"&&boardButtons[i+7].getText()==">")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
+                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-7].getText()==">"&&boardButtons[i+1].getText()=="<"&&boardButtons[i+7].getText()=="<")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
+                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-7].getText()=="<"&&boardButtons[i+1].getText()=="<"&&boardButtons[i+7].getText()=="<")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
+                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-7].getText()=="<"&&boardButtons[i+1].getText()=="<"&&boardButtons[i+7].getText()==">")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
+                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
 
                     }
                 }
@@ -2336,8 +2572,119 @@ public class board7 extends AppCompatActivity {
                         }
 
                     }
-                    else if(boardButtons[i-14].getText()==""&&boardButtons[i-2].getText()==""&&boardButtons[i+14].getText()=="")//todo right
+                    else if(boardButtons[i-14].getText()==""&&boardButtons[i-2].getText()==""&&boardButtons[i+14].getText()=="")
                     {
+                        if(boardButtons[i-7].getText()==">"&&boardButtons[i-1].getText()==">"&&boardButtons[i+7].getText()==">")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
+                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+                        }
+                        else if(boardButtons[i-7].getText()=="<"&&boardButtons[i-1].getText()=="<"&&boardButtons[i+7].getText()=="<")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value))> Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-7].getText()==">"&&boardButtons[i-1].getText()==">"&&boardButtons[i+7].getText()=="<")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+                        }
+                        else if(boardButtons[i-7].getText()==">"&&boardButtons[i-1].getText()=="<"&&boardButtons[i+7].getText()==">")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-7].getText()=="<"&&boardButtons[i-1].getText()==">"&&boardButtons[i+7].getText()==">")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-7].getText()==">"&&boardButtons[i-1].getText()=="<"&&boardButtons[i+7].getText()=="<")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-7].getText()=="<"&&boardButtons[i-1].getText()=="<"&&boardButtons[i+7].getText()=="<")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-7].getText()=="<"&&boardButtons[i-1].getText()=="<"&&boardButtons[i+7].getText()==">")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
 
                     }
                 }
@@ -2902,8 +3249,119 @@ public class board7 extends AppCompatActivity {
                         }
 
                     }
-                    else if(boardButtons[i-14].getText()!=""&&boardButtons[i+2].getText()!=""&&boardButtons[i-2].getText()!="")//todo last
+                    else if(boardButtons[i-14].getText()!=""&&boardButtons[i+2].getText()!=""&&boardButtons[i-2].getText()!="")
                     {
+                        if(boardButtons[i-7].getText()==">"&&boardButtons[i-1].getText()==">"&&boardButtons[i+7].getText()==">")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+2].getText())))
+                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+                        }
+                        else if(boardButtons[i-7].getText()=="<"&&boardButtons[i-1].getText()=="<"&&boardButtons[i+7].getText()=="<")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value))> Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+2].getText())))                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-7].getText()==">"&&boardButtons[i-1].getText()==">"&&boardButtons[i+7].getText()=="<")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+2].getText())))                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+                        }
+                        else if(boardButtons[i-7].getText()==">"&&boardButtons[i-1].getText()=="<"&&boardButtons[i+7].getText()==">")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+2].getText())))                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-7].getText()=="<"&&boardButtons[i-1].getText()==">"&&boardButtons[i+7].getText()==">")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+2].getText())))                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-7].getText()==">"&&boardButtons[i-1].getText()=="<"&&boardButtons[i+7].getText()=="<")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+2].getText())))                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-7].getText()=="<"&&boardButtons[i-1].getText()=="<"&&boardButtons[i+7].getText()=="<")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+2].getText())))                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
+                        else if(boardButtons[i-7].getText()=="<"&&boardButtons[i-1].getText()=="<"&&boardButtons[i+7].getText()==">")
+                        {
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-14].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+2].getText())))                            {
+                                alert.setText("");
+                                return true;
+                            }
+                            else
+                            {
+                                alert.setText("Can't place that number there");
+                                return false;
+
+                            }
+
+                        }
 
                     }
                 }
@@ -2915,11 +3373,13 @@ public class board7 extends AppCompatActivity {
                     {
                         return true;
                     }
-
-                    if(boardButtons[i-14].getText()==""&&boardButtons[i+2].getText()==""&&boardButtons[i-2].getText()==""&&boardButtons[i+14].getText()=="")
+                    else if(boardButtons[i-14].getText()==""&&boardButtons[i+2].getText()==""&&boardButtons[i-2].getText()==""&&boardButtons[i+14].getText()=="")
                     {
-                        return true;
+                        
                     }
+
+
+
 
                 }
 

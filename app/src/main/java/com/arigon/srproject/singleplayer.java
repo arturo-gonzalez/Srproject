@@ -599,7 +599,6 @@ public class singleplayer extends AppCompatActivity {
                 Button btn = (Button) findViewById(buttonIDs[i-1]);
                 removedButtons[i-1]=btn;//set selected button to removedButtons array
                 //delete text from some buttons
-                String v;
                 int x = (int) (Math.random() * 2);
                 if(x == 1)
                     boardButtons[i-1].setText("");
@@ -1182,7 +1181,7 @@ public class singleplayer extends AppCompatActivity {
             customHandler.removeCallbacks(updateTimerThread);
 
             alert.setText("You Win");
-            
+
         }
 
     }
