@@ -1133,6 +1133,9 @@ public class singleplayer extends AppCompatActivity {
     }
 
 
+    ///////////////////////////////////////////////////////
+    //timer
+    ////////////////////////////////////////////////////////
     private Runnable updateTimerThread = new Runnable() {
 
         public void run() {
@@ -1151,6 +1154,9 @@ public class singleplayer extends AppCompatActivity {
 
     };
 
+    /////////////////////////////////////////////
+    //if a number is already on the board, disable it
+    //////////////////////////////////////////////////////
     public void onBoard(Button btn)
     {
         for(int i = 0; i<49; i++)
@@ -1164,7 +1170,11 @@ public class singleplayer extends AppCompatActivity {
 
     }
 
-    public void win()
+    //////////////////////////////////////////
+    // check if a player has won
+    //display winning message, and time it took to finish
+    ////////////////////////////////////////
+    public void win()//todo: finish this
     {
         boolean full = true;
         for(int i=0;i<49;i++)
