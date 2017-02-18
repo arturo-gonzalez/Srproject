@@ -110,6 +110,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -123,6 +124,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -136,6 +138,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -149,6 +152,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -162,6 +166,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -175,6 +180,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -188,6 +194,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -201,6 +208,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -214,6 +222,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -227,6 +236,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -240,6 +250,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -253,6 +264,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -266,6 +278,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -279,6 +292,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -292,6 +306,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -305,6 +320,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -318,6 +334,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -331,6 +348,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -344,6 +362,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -357,6 +376,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -370,6 +390,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -383,6 +404,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -396,6 +418,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
 
             }
@@ -410,6 +433,7 @@ public class singleplayer extends AppCompatActivity {
                     btn.setText(value);
                     clicked = false;
                     currButton.setEnabled(false);
+                    win();
                 }
             }
         });
@@ -1190,11 +1214,47 @@ public class singleplayer extends AppCompatActivity {
             timeSwapBuff += timeInMilliseconds;
             customHandler.removeCallbacks(updateTimerThread);
 
-            alert.setText("You Win");
+            //alert.setText("You Win");
+            AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
+            myAlert.setMessage("You Win!")
+                    .setPositiveButton("OK",new DialogInterface.OnClickListener(){
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        {
+                            dialog.dismiss();
+                            Intent i = new Intent(singleplayer.this, menu.class);
+                            startActivity(i);
+                        }
+                    })
+                    .setTitle("You Win!")
+                    .create();
+            myAlert.show();
 
         }
 
     }
+
+    //alert dialog
+    public void showAlert(View view)
+    {
+        AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
+        myAlert.setMessage("You Win!")
+                .setPositiveButton("OK",new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        dialog.dismiss();
+                    }
+                })
+                .setTitle("You Win!")
+                .create();
+        myAlert.show();
+
+
+
+    }
+
+
 }
 
 

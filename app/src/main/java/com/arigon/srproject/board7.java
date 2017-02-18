@@ -3472,7 +3472,7 @@ public class board7 extends AppCompatActivity {
                     }
                     else if(boardButtons[i-14].getText()==""&&boardButtons[i+2].getText()==""&&boardButtons[i-2].getText()==""&&boardButtons[i+14].getText()!="")
                     {
-                        if(boardButtons[+7].getText()==">")
+                        if(boardButtons[i+7].getText()==">")
                         {
                             if(Integer.parseInt(String.valueOf(value))> Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
                             {
@@ -3753,7 +3753,7 @@ public class board7 extends AppCompatActivity {
                     {
                         if(boardButtons[i+1].getText()==">"&&boardButtons[i+7].getText()==">")
                         {
-                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
                             {
                                 alert.setText("");
                                 return true;
@@ -3767,7 +3767,7 @@ public class board7 extends AppCompatActivity {
                         }
                         else if(boardButtons[i+1].getText()=="<"&&boardButtons[i+7].getText()==">")
                         {
-                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
                             {
                                 alert.setText("");
                                 return true;
@@ -3782,7 +3782,7 @@ public class board7 extends AppCompatActivity {
                         }
                         else if(boardButtons[i+1].getText()=="<"&&boardButtons[i+7].getText()=="<")
                         {
-                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
                             {
                                 alert.setText("");
                                 return true;
@@ -3796,7 +3796,7 @@ public class board7 extends AppCompatActivity {
                         }
                         else if(boardButtons[i+1].getText()==">"&&boardButtons[i+7].getText()=="<")
                         {
-                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
                             {
                                 alert.setText("");
                                 return true;
@@ -3813,9 +3813,9 @@ public class board7 extends AppCompatActivity {
                     }
                     else if(boardButtons[i-14].getText()==""&&boardButtons[i+2].getText()==""&&boardButtons[i-2].getText()!=""&&boardButtons[i+14].getText()!="")
                     {
-                        if(boardButtons[i+7].getText()==">"&&boardButtons[i-1].getText()==">")
+                        if(boardButtons[i-1].getText()==">"&&boardButtons[i+7].getText()==">")
                         {
-                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-2].getText())))
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) <Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
                             {
                                 alert.setText("");
                                 return true;
@@ -3827,9 +3827,9 @@ public class board7 extends AppCompatActivity {
 
                             }
                         }
-                        else if(boardButtons[i+7].getText()=="<"&&boardButtons[i-1].getText()==">")
+                        else if(boardButtons[i-1].getText()=="<"&&boardButtons[i+7].getText()==">")
                         {
-                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-2].getText())))
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
                             {
                                 alert.setText("");
                                 return true;
@@ -3842,9 +3842,9 @@ public class board7 extends AppCompatActivity {
                             }
 
                         }
-                        else if(boardButtons[i+7].getText()=="<"&&boardButtons[i-1].getText()=="<")
+                        else if(boardButtons[i-1].getText()=="<"&&boardButtons[i+7].getText()=="<")
                         {
-                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-2].getText())))
+                            if(Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
                             {
                                 alert.setText("");
                                 return true;
@@ -3856,9 +3856,9 @@ public class board7 extends AppCompatActivity {
 
                             }
                         }
-                        else if(boardButtons[i+7].getText()==">"&&boardButtons[i-1].getText()=="<")
+                        else if(boardButtons[i-1].getText()==">"&&boardButtons[i+7].getText()=="<")
                         {
-                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-2].getText())))
+                            if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i+14].getText())))
                             {
                                 alert.setText("");
                                 return true;
@@ -4349,6 +4349,7 @@ public class board7 extends AppCompatActivity {
                     }
                     else if(boardButtons[i-14].getText()!=""&&boardButtons[i+2].getText()!=""&&boardButtons[i-2].getText()!=""&&boardButtons[i+14].getText()!="")
                     { ///todo:inner buttons that are surrounded by 4 numbers
+
 
                     }
 
