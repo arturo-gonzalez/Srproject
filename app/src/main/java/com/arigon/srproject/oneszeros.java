@@ -1,7 +1,10 @@
-/**
- * Created by art on 1/18/2017.
- */
 package com.arigon.srproject;
+
+
+/**
+ * Created by art on 2/22/2017.
+ */
+
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -13,7 +16,9 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class board7 extends AppCompatActivity {
+import java.util.Random;
+
+public class oneszeros extends AppCompatActivity {
     boolean clicked = false;
     String value;
     Button currButton;
@@ -37,7 +42,9 @@ public class board7 extends AppCompatActivity {
         int[] avnum = new int[25];//player choice numbers
         for(int i = 0; i<25; i++)
         {
-            avnum[i] =  i+1;
+            Random r = new Random();
+            int n = r.nextInt(2 - 0) + 0;
+            avnum[i] =  n;
         }
 
         ///////////////////////////////////////////////////////////////
@@ -555,7 +562,7 @@ public class board7 extends AppCompatActivity {
             {
                 if(v.getId() == R.id.button27)
                 {
-                    Intent i = new Intent(board7.this, menu.class);
+                    Intent i = new Intent(oneszeros.this, menu.class);
                     startActivity(i);
 
                 }
@@ -1152,7 +1159,7 @@ public class board7 extends AppCompatActivity {
                             @Override
                             public void run() {
                                 if(turn ==2)
-                                btn3.setText("1"); //just a test
+                                    btn3.setText("1"); //just a test
                                 turn = 1;
 
                                 //todo: work on computers choice of number and placing on board
@@ -1165,7 +1172,7 @@ public class board7 extends AppCompatActivity {
                 }
             }
         };
-    t.start();
+        t.start();
     }
 
 
@@ -4382,5 +4389,7 @@ public class board7 extends AppCompatActivity {
     }
 
 }
+
+
 
 

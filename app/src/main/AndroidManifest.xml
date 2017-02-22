@@ -22,6 +22,8 @@
         </activity>
         <activity android:name=".singleplayer">
         </activity>
+        <activity android:name=".oneszeros">
+        </activity>
     </application>
 
 </manifest>

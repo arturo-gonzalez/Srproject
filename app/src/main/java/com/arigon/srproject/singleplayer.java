@@ -16,10 +16,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Random;
+import java.util.List;
+
 
 public class singleplayer extends AppCompatActivity {
     boolean clicked = false;
@@ -49,6 +49,12 @@ public class singleplayer extends AppCompatActivity {
     long timeInMilliseconds = 0L;
     long timeSwapBuff = 0L;
     long updatedTime = 0L;
+
+    //////////////////////////////////////////
+    //score list
+    /////////////////////////////////////////
+    List<CharSequence> scoreList;
+
 
 
     //this function runs when the program starts
@@ -1230,7 +1236,8 @@ public class singleplayer extends AppCompatActivity {
                     .create();
             myAlert.show();
 
-            //save score 
+            //save score
+            scoreList.add(timer);
 
         }
 
