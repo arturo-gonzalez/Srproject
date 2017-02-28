@@ -1180,6 +1180,7 @@ public class MainActivity extends AppCompatActivity {
                                     //todo: work on computers choice of number and placing on board
                                     // call AI function
                                     callMinimax(1);
+                                    placeAMove(returnBestMove());
                                     turn = 1;
 
                                 }
@@ -1209,9 +1210,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void placeAMove(int point) {
-        //int place = point.number;
-        boardButtons[point].setText(Integer.toString(2));
+    public void placeAMove(Point point) {
+        int place = point.number;
+        boardButtons[place].setText(Integer.toString(2));
+    }
+
+    public Point returnBestMove() {
+        int MAX = -100000;
+        int best = -1;
+
+        for (int i = 0; i < rootsChildrenScores.size(); ++i) {
+            if (MAX < rootsChildrenScores.get(i).score) {
+                MAX = rootsChildrenScores.get(i).score;
+                best = i;
+            }
+        }
+
+        return rootsChildrenScores.get(best).point;
     }
 
     public boolean computerWins()
@@ -1287,8 +1302,10 @@ public class MainActivity extends AppCompatActivity {
                 rootsChildrenScores.add(new PointsAndScores(currentScore, point));
 
         }
+        returnMax(scores);
+        returnMin(scores);
         int score = returnMax(scores);
-        placeAMove(score);
+
         return score;
     }
 
