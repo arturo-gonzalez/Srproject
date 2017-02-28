@@ -13,6 +13,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class board7 extends AppCompatActivity {
     boolean clicked = false;
     String value;
@@ -1158,6 +1162,7 @@ public class board7 extends AppCompatActivity {
                                 //todo: work on computers choice of number and placing on board
                                 // call AI function
 
+
                             }
                         });
                     }
@@ -1167,6 +1172,7 @@ public class board7 extends AppCompatActivity {
         };
     t.start();
     }
+
 
 
     ///////////////////////////////////////////////////////////////////

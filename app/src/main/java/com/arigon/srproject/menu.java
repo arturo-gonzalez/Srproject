@@ -47,5 +47,13 @@ public class menu extends AppCompatActivity {
             startActivity(i);
 
         }
+
+        //go to the test game when button is clicked
+        if(v.getId() == R.id.test)
+        {
+            Intent i = new Intent(menu.this, MainActivity.class);
+            startActivity(i);
+
+        }
     }
 }

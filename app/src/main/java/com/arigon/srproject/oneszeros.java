@@ -5,7 +5,6 @@ package com.arigon.srproject;
  * Created by art on 2/22/2017.
  */
 
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -43,7 +42,7 @@ public class oneszeros extends AppCompatActivity {
         for(int i = 0; i<25; i++)
         {
             Random r = new Random();
-            int n = r.nextInt(2 - 0) + 0;
+            int n = r.nextInt(2 - 0);
             avnum[i] =  n;
         }
 

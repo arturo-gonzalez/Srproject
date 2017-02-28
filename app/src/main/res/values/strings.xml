@@ -5,6 +5,7 @@
     <string name="seven">Seven</string>
     <string name="onezero">1>0</string>
     <string name="single">Single Player</string>
+    <string name="test">AI test (MainActivity)</string>
     <string name="CP">CP</string>
     <string name="two">Two Players</string>
 </resources>
