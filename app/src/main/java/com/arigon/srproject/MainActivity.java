@@ -1231,7 +1231,7 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean computerWins()
     {
-        if(turn==1 && getAvailableStates().isEmpty())
+        if(turn==2 && getAvailableStates().isEmpty())
         {
             return true;
         }
@@ -1240,7 +1240,7 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean playerWins()
     {
-        if(turn==2 && getAvailableStates().isEmpty())
+        if(turn==1 && getAvailableStates().isEmpty())
         {
             return true;
         }
@@ -1282,8 +1282,8 @@ public class MainActivity extends AppCompatActivity {
 
     public int minimax(int depth) {
 
-        if (computerWins()) return +1;
-        if (playerWins()) return -1;
+        //if (computerWins()) return +1;
+        //if (playerWins()) return -1;
 
         List<Point> pointsAvailable = getAvailableStates();
         if (pointsAvailable.isEmpty()) return 0;
@@ -1293,24 +1293,27 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < pointsAvailable.size(); ++i) {
             Point point = pointsAvailable.get(i);
 
+            if (turn == 1) { //X's turn select the highest from below minimax() call
+                placeAMove(point);
+                int currentScore = minimax(depth + 1);
+                scores.add(currentScore);
 
-            //placeAMove(point, 1);
-            int currentScore = minimax(depth + 1);
-            scores.add(currentScore);
+                if (depth == 0)
+                    rootsChildrenScores.add(new PointsAndScores(currentScore, point));
 
-            if (depth == 0)
-                rootsChildrenScores.add(new PointsAndScores(currentScore, point));
+            } else if (turn == 2) {//O's turn select the lowest from below minimax() call
+                placeAMove(point);
+                scores.add(minimax(depth + 1));
+            }
+            boardButtons[i].setText("");//Reset this point
 
         }
         returnMax(scores);
-        returnMin(scores);
+        //returnMin(scores);
         int score = returnMax(scores);
 
         return score;
     }
-
-
-
 
     ///////////////////////////////////////////////////////////////////
     //randomString generates a random < or >
