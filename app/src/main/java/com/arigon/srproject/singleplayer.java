@@ -29,6 +29,7 @@ public class singleplayer extends AppCompatActivity {
     //players turn
     int turn = 1;
 
+    Button[] choiceButtons = new Button[25];//array of possible buttons
     Button[] boardButtons = new Button[49];//array of board buttons
     Button[] removedButtons = new Button[49];//array of removed buttons
     int[] buttonIDs = new int[]{R.id.btn1,R.id.btn2,R.id.btn3,R.id.btn4,R.id.btn5,R.id.btn6,
@@ -93,382 +94,308 @@ public class singleplayer extends AppCompatActivity {
         //  disable currButton so it can't be clicked anymore
         /////////////////////////////////////////////////////////
         Button btn1 = (Button) findViewById(R.id.btn1);
-        btn1.setOnClickListener(new View.OnClickListener() {
+        boardButtons[0] = btn1;
+        boardButtons[0].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked ) {
+                    choice(btn);
+
                 }
             }
         });
         Button btn3 = (Button) findViewById(R.id.btn3);
-        btn3.setOnClickListener(new View.OnClickListener() {
+        boardButtons[2] = btn3;
+        boardButtons[2].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0  ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked ) {
+                    choice(btn);
                 }
             }
         });
         Button btn5 = (Button) findViewById(R.id.btn5);
-        btn5.setOnClickListener(new View.OnClickListener() {
+        boardButtons[4] = btn5;
+        boardButtons[4].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked ) {
+                    choice(btn);
                 }
             }
         });
         Button btn7 = (Button) findViewById(R.id.btn7);
-        btn7.setOnClickListener(new View.OnClickListener() {
+        boardButtons[6] = btn7;
+        boardButtons[6].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked  ) {
+                    choice(btn);
                 }
             }
         });
         Button btn9 = (Button) findViewById(R.id.btn9);
-        btn9.setOnClickListener(new View.OnClickListener() {
+        boardButtons[8] = btn9;
+        boardButtons[8].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked  ) {
+                    choice(btn);
                 }
             }
         });
         Button btn11 = (Button) findViewById(R.id.btn11);
-        btn11.setOnClickListener(new View.OnClickListener() {
+        boardButtons[10] = btn11;
+        boardButtons[10].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked ) {
+                    choice(btn);
                 }
             }
         });
         Button btn13 = (Button) findViewById(R.id.btn13);
-        btn13.setOnClickListener(new View.OnClickListener() {
+        boardButtons[12] = btn13;
+        boardButtons[12].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked ) {
+                    choice(btn);
                 }
             }
         });
         Button btn15 = (Button) findViewById(R.id.btn15);
-        btn15.setOnClickListener(new View.OnClickListener() {
+        boardButtons[14] = btn15;
+        boardButtons[14].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked  ) {
+                    choice(btn);
                 }
             }
         });
         Button btn17 = (Button) findViewById(R.id.btn17);
-        btn17.setOnClickListener(new View.OnClickListener() {
+        boardButtons[16] = btn17;
+        boardButtons[16].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0  ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked  ) {
+                    choice(btn);
                 }
             }
         });
         Button btn19 = (Button) findViewById(R.id.btn19);
-        btn19.setOnClickListener(new View.OnClickListener() {
+        boardButtons[18] = btn19;
+        boardButtons[18].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked ) {
+                    choice(btn);
                 }
             }
         });
         Button btn21 = (Button) findViewById(R.id.btn21);
-        btn21.setOnClickListener(new View.OnClickListener() {
+        boardButtons[20] = btn21;
+        boardButtons[20].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked ) {
+                    choice(btn);
                 }
             }
         });
         Button btn23 = (Button) findViewById(R.id.btn23);
-        btn23.setOnClickListener(new View.OnClickListener() {
+        boardButtons[22] = btn23;
+        boardButtons[22].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0  ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked  ) {
+                    choice(btn);
                 }
             }
         });
         Button btn25 = (Button) findViewById(R.id.btn25);
-        btn25.setOnClickListener(new View.OnClickListener() {
+        boardButtons[24] = btn25;
+        boardButtons[24].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked  ) {
+                    choice(btn);
                 }
             }
         });
         Button btn27 = (Button) findViewById(R.id.btn27);
-        btn27.setOnClickListener(new View.OnClickListener() {
+        boardButtons[26] = btn27;
+        boardButtons[26].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked) {
+                    choice(btn);
                 }
             }
         });
         Button btn29 = (Button) findViewById(R.id.btn29);
-        btn29.setOnClickListener(new View.OnClickListener() {
+        boardButtons[28] = btn29;
+        boardButtons[28].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked ) {
+                    choice(btn);
                 }
             }
         });
         Button btn31 = (Button) findViewById(R.id.btn31);
-        btn31.setOnClickListener(new View.OnClickListener() {
+        boardButtons[30] = btn31;
+        boardButtons[30].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked  ) {
+                    choice(btn);
                 }
             }
         });
         Button btn33 = (Button) findViewById(R.id.btn33);
-        btn33.setOnClickListener(new View.OnClickListener() {
+        boardButtons[32] = btn33;
+        boardButtons[32].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked ) {
+                    choice(btn);
                 }
             }
         });
         Button btn35 = (Button) findViewById(R.id.btn35);
-        btn35.setOnClickListener(new View.OnClickListener() {
+        boardButtons[34] = btn35;
+        boardButtons[34].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked ) {
+                    choice(btn);
                 }
             }
         });
         Button btn37 = (Button) findViewById(R.id.btn37);
-        btn37.setOnClickListener(new View.OnClickListener() {
+        boardButtons[36] = btn37;
+        boardButtons[36].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked ) {
+                    choice(btn);
                 }
             }
         });
         Button btn39 = (Button) findViewById(R.id.btn39);
-        btn39.setOnClickListener(new View.OnClickListener() {
+        boardButtons[38] = btn39;
+        boardButtons[38].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked ) {
+                    choice(btn);
                 }
             }
         });
         Button btn41 = (Button) findViewById(R.id.btn41);
-        btn41.setOnClickListener(new View.OnClickListener() {
+        boardButtons[40] = btn41;
+        boardButtons[40].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked  ) {
+                    choice(btn);
                 }
             }
         });
         Button btn43 = (Button) findViewById(R.id.btn43);
-        btn43.setOnClickListener(new View.OnClickListener() {
+        boardButtons[42] = btn43;
+        boardButtons[42].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked ) {
+                    choice(btn);
                 }
             }
         });
         Button btn45 = (Button) findViewById(R.id.btn45);
-        btn45.setOnClickListener(new View.OnClickListener() {
+        boardButtons[44] = btn45;
+        boardButtons[44].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked) {
+                    choice(btn);
                 }
             }
         });
         Button btn47 = (Button) findViewById(R.id.btn47);
-        btn47.setOnClickListener(new View.OnClickListener() {
+        boardButtons[46] = btn47;
+        boardButtons[46].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked) {
+                    choice(btn);
                 }
 
             }
         });
         Button btn49 = (Button) findViewById(R.id.btn49);
-        btn49.setOnClickListener(new View.OnClickListener() {
+        boardButtons[48] = btn49;
+        boardButtons[48].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Button btn = (Button) v;
-                if (clicked && btn.getText().length() == 0 ) {
-                    btn.setText(value);
-                    clicked = false;
-                    currButton.setEnabled(false);
-                    win(timerValue.getText());
+                if (clicked) {
+                    choice(btn);
                 }
             }
         });
-        //set numbers into light squares
-        boardButtons[0] = btn1;
-        boardButtons[2] = btn3;
-        boardButtons[4] = btn5;
-        boardButtons[6] = btn7;
-        boardButtons[8] = btn9;
-        boardButtons[10] = btn11;
-        boardButtons[12] = btn13;
-        boardButtons[14] = btn15;
-        boardButtons[16] = btn17;
-        boardButtons[18] = btn19;
-        boardButtons[20] = btn21;
-        boardButtons[22] = btn23;
-        boardButtons[24] = btn25;
-        boardButtons[26] = btn27;
-        boardButtons[28] = btn29;
-        boardButtons[30] = btn31;
-        boardButtons[32] = btn33;
-        boardButtons[34] = btn35;
-        boardButtons[36] = btn37;
-        boardButtons[38] = btn39;
-        boardButtons[40] = btn41;
-        boardButtons[42] = btn43;
-        boardButtons[44] = btn45;
-        boardButtons[46] = btn47;
-        boardButtons[48] = btn49;
+
 
 
         ///////////////////////////////////////////////////
@@ -650,7 +577,8 @@ public class singleplayer extends AppCompatActivity {
         Button button1 = (Button) findViewById(R.id.button1);
         button1.setText(String.valueOf(avnum[0]));
         onBoard(button1);
-        button1.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[0]=button1;
+        choiceButtons[0].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -669,7 +597,8 @@ public class singleplayer extends AppCompatActivity {
         Button button2 = (Button) findViewById(R.id.button2);
         button2.setText(String.valueOf(avnum[1]));
         onBoard(button2);
-        button2.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[1]=button2;
+        choiceButtons[1].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -680,7 +609,6 @@ public class singleplayer extends AppCompatActivity {
                 value = button.getText().toString();
                 button.setBackgroundColor(Color.WHITE);
 
-
                 clicked = true;
                 currButton = button;
 
@@ -689,7 +617,8 @@ public class singleplayer extends AppCompatActivity {
         Button button3 = (Button) findViewById(R.id.button3);
         button3.setText(String.valueOf(avnum[2]));
         onBoard(button3);
-        button3.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[2]=button3;
+        choiceButtons[2].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -709,7 +638,8 @@ public class singleplayer extends AppCompatActivity {
         Button button4 = (Button) findViewById(R.id.button4);
         button4.setText(String.valueOf(avnum[3]));
         onBoard(button4);
-        button4.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[3]=button4;
+        choiceButtons[3].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -729,7 +659,8 @@ public class singleplayer extends AppCompatActivity {
         Button button5 = (Button) findViewById(R.id.button5);
         button5.setText(String.valueOf(avnum[4]));
         onBoard(button5);
-        button5.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[4]=button5;
+        choiceButtons[4].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -749,7 +680,8 @@ public class singleplayer extends AppCompatActivity {
         Button button6 = (Button) findViewById(R.id.button6);
         button6.setText(String.valueOf(avnum[5]));
         onBoard(button6);
-        button6.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[5]=button6;
+        choiceButtons[5].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -769,7 +701,8 @@ public class singleplayer extends AppCompatActivity {
         Button button7 = (Button) findViewById(R.id.button7);
         button7.setText(String.valueOf(avnum[6]));
         onBoard(button7);
-        button7.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[6]=button7;
+        choiceButtons[6].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -789,7 +722,8 @@ public class singleplayer extends AppCompatActivity {
         Button button8 = (Button) findViewById(R.id.button8);
         button8.setText(String.valueOf(avnum[7]));
         onBoard(button8);
-        button8.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[7]=button8;
+        choiceButtons[7].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -809,7 +743,8 @@ public class singleplayer extends AppCompatActivity {
         Button button9 = (Button) findViewById(R.id.button9);
         button9.setText(String.valueOf(avnum[8]));
         onBoard(button9);
-        button9.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[8]=button9;
+        choiceButtons[8].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -828,8 +763,8 @@ public class singleplayer extends AppCompatActivity {
         Button button10 = (Button) findViewById(R.id.button10);
         button10.setText(String.valueOf(avnum[9]));
         onBoard(button10);
-        button10.setOnClickListener(new View.OnClickListener() {
-
+        choiceButtons[9]=button10;
+        choiceButtons[9].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (clicked) {
@@ -848,7 +783,8 @@ public class singleplayer extends AppCompatActivity {
         Button button11 = (Button) findViewById(R.id.button11);
         button11.setText(String.valueOf(avnum[10]));
         onBoard(button11);
-        button11.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[10]=button11;
+        choiceButtons[10].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -868,7 +804,8 @@ public class singleplayer extends AppCompatActivity {
         Button button12 = (Button) findViewById(R.id.button12);
         button12.setText(String.valueOf(avnum[11]));
         onBoard(button12);
-        button12.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[11]=button12;
+        choiceButtons[11].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -888,7 +825,8 @@ public class singleplayer extends AppCompatActivity {
         Button button13 = (Button) findViewById(R.id.button13);
         button13.setText(String.valueOf(avnum[12]));
         onBoard(button13);
-        button13.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[12]=button13;
+        choiceButtons[12].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -908,7 +846,8 @@ public class singleplayer extends AppCompatActivity {
         Button button14 = (Button) findViewById(R.id.button14);
         button14.setText(String.valueOf(avnum[13]));
         onBoard(button14);
-        button14.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[13]=button14;
+        choiceButtons[13].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -928,7 +867,8 @@ public class singleplayer extends AppCompatActivity {
         Button button15 = (Button) findViewById(R.id.button15);
         button15.setText(String.valueOf(avnum[14]));
         onBoard(button15);
-        button15.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[14]=button15;
+        choiceButtons[14].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -948,7 +888,8 @@ public class singleplayer extends AppCompatActivity {
         Button button16 = (Button) findViewById(R.id.button16);
         button16.setText(String.valueOf(avnum[15]));
         onBoard(button16);
-        button16.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[15]=button16;
+        choiceButtons[15].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -968,7 +909,8 @@ public class singleplayer extends AppCompatActivity {
         Button button17 = (Button) findViewById(R.id.button17);
         button17.setText(String.valueOf(avnum[16]));
         onBoard(button17);
-        button17.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[16]=button17;
+        choiceButtons[16].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -987,7 +929,8 @@ public class singleplayer extends AppCompatActivity {
         Button button18 = (Button) findViewById(R.id.button18);
         button18.setText(String.valueOf(avnum[17]));
         onBoard(button18);
-        button18.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[17]=button18;
+        choiceButtons[17].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -1007,7 +950,8 @@ public class singleplayer extends AppCompatActivity {
         Button button19 = (Button) findViewById(R.id.button19);
         button19.setText(String.valueOf(avnum[18]));
         onBoard(button19);
-        button19.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[18]=button19;
+        choiceButtons[18].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -1027,7 +971,8 @@ public class singleplayer extends AppCompatActivity {
         Button button20 = (Button) findViewById(R.id.button20);
         button20.setText(String.valueOf(avnum[19]));
         onBoard(button20);
-        button20.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[19]=button20;
+        choiceButtons[19].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -1047,7 +992,8 @@ public class singleplayer extends AppCompatActivity {
         Button button21 = (Button) findViewById(R.id.button21);
         button21.setText(String.valueOf(avnum[20]));
         onBoard(button21);
-        button21.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[20]=button21;
+        choiceButtons[20].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -1067,7 +1013,8 @@ public class singleplayer extends AppCompatActivity {
         Button button22 = (Button) findViewById(R.id.button22);
         button22.setText(String.valueOf(avnum[21]));
         onBoard(button22);
-        button22.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[21]=button22;
+        choiceButtons[21].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -1087,7 +1034,8 @@ public class singleplayer extends AppCompatActivity {
         Button button23 = (Button) findViewById(R.id.button23);
         button23.setText(String.valueOf(avnum[22]));
         onBoard(button23);
-        button23.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[22]=button23;
+        choiceButtons[22].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -1107,7 +1055,8 @@ public class singleplayer extends AppCompatActivity {
         Button button24 = (Button) findViewById(R.id.button24);
         button24.setText(String.valueOf(avnum[23]));
         onBoard(button24);
-        button24.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[23]=button24;
+        choiceButtons[23].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -1127,7 +1076,8 @@ public class singleplayer extends AppCompatActivity {
         Button button25 = (Button) findViewById(R.id.button25);
         button25.setText(String.valueOf(avnum[24]));
         onBoard(button25);
-        button25.setOnClickListener(new View.OnClickListener() {
+        choiceButtons[24]=button25;
+        choiceButtons[24].setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -1159,9 +1109,7 @@ public class singleplayer extends AppCompatActivity {
 
         });
 
-
     }
-
 
     ///////////////////////////////////////////////////////
     //timer
@@ -1197,7 +1145,22 @@ public class singleplayer extends AppCompatActivity {
                 btn.setEnabled(false);
             }
         }
+    }
 
+    public void choice(Button btn)
+    {
+        //if button has a number re-enable button with that number
+        for(int i = 0; i<25;i++)
+        {
+            if(choiceButtons[i].getText()==btn.getText())
+            {
+                choiceButtons[i].setBackgroundColor(Color.GRAY);
+            }
+        }
+        btn.setText(value);
+        clicked = false;
+
+        win(timerValue.getText());
     }
 
     //////////////////////////////////////////
@@ -1207,6 +1170,8 @@ public class singleplayer extends AppCompatActivity {
     public void win(CharSequence timer)//todo: finish this
     {
         boolean full = true;
+        int num = 0;
+
         for(int i=0;i<49;i++)
         {
             if(boardButtons[i].getText()=="")
@@ -1215,12 +1180,22 @@ public class singleplayer extends AppCompatActivity {
             }
 
         }
-        if(full)
+        for(int i=1; i<50; i++)
+        {
+            if(i%2 ==1)//check if it is a light button(odd number on board)
+            {
+                if (boardButtons[i-1].getText()==removedButtons[i-1].getText())
+                {
+                    num++;
+                }
+            }
+        }
+        if(full&&num==25)
         {
             timeSwapBuff += timeInMilliseconds;
             customHandler.removeCallbacks(updateTimerThread);
 
-            //alert.setText("You Win");
+
             AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
             myAlert.setMessage("Your time was " + timer)
                     .setPositiveButton("OK",new DialogInterface.OnClickListener(){
@@ -1237,7 +1212,7 @@ public class singleplayer extends AppCompatActivity {
             myAlert.show();
 
             //save score
-            scoreList.add(timer);
+            //scoreList.add(timer);
 
         }
 

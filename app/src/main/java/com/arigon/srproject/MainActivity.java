@@ -1282,8 +1282,8 @@ public class MainActivity extends AppCompatActivity {
 
     public int minimax(int depth) {
 
-        //if (computerWins()) return +1;
-        //if (playerWins()) return -1;
+        if (computerWins()) return +1;
+        if (playerWins()) return -1;
 
         List<Point> pointsAvailable = getAvailableStates();
         if (pointsAvailable.isEmpty()) return 0;
