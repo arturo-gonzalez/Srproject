@@ -32,6 +32,7 @@ public class singleplayer extends AppCompatActivity {
     Button[] choiceButtons = new Button[25];//array of possible buttons
     Button[] boardButtons = new Button[49];//array of board buttons
     Button[] removedButtons = new Button[49];//array of removed buttons
+    Button[] addedButtons = new Button [25];//array of added buttons
     int[] buttonIDs = new int[]{R.id.btn1,R.id.btn2,R.id.btn3,R.id.btn4,R.id.btn5,R.id.btn6,
             R.id.btn7,R.id.btn8,R.id.btn9,R.id.btn10,R.id.btn11,R.id.btn12,R.id.btn13,
             R.id.btn14,R.id.btn15,R.id.btn16,R.id.btn17,R.id.btn18,R.id.btn19,R.id.btn20,R.id.btn21,
@@ -548,21 +549,21 @@ public class singleplayer extends AppCompatActivity {
         //////////////////////////////////////////////////
         //remove some numbers from board
         /////////////////////////////////////////////////
-        for(int i=1; i<50; i++)
+        for(int i=0; i<49; i++)
         {
-            if(i%2 ==1)//check if it is a light button(odd number on board)
+            if(i%2 ==0)//check if it is a light button(odd number on board)
             {
                 //add to array of buttons
-                Button btn = (Button) findViewById(buttonIDs[i-1]);
-                removedButtons[i-1]=btn;//set selected button to removedButtons array
+                //Button btn = (Button) findViewById(buttonIDs[i]);
+                removedButtons[i]=boardButtons[i];//set selected button to removedButtons array
                 //delete text from some buttons
                 int x = (int) (Math.random() * 2);
                 if(x == 1)
-                    boardButtons[i-1].setText("");
-
-
-
+                    boardButtons[i].setText("");
+                else
+                    boardButtons[i].setEnabled(false);
             }
+
         }
 
         ///////////////////////////////////////////////////////////////
@@ -1158,6 +1159,7 @@ public class singleplayer extends AppCompatActivity {
             }
         }
         btn.setText(value);
+
         clicked = false;
 
         win(timerValue.getText());
@@ -1167,7 +1169,7 @@ public class singleplayer extends AppCompatActivity {
     // check if a player has won
     //display winning message, and time it took to finish
     ////////////////////////////////////////
-    public void win(CharSequence timer)//todo: finish this
+    public void win(CharSequence timer)
     {
         boolean full = true;
         int num = 0;
@@ -1180,17 +1182,8 @@ public class singleplayer extends AppCompatActivity {
             }
 
         }
-        for(int i=1; i<50; i++)
-        {
-            if(i%2 ==1)//check if it is a light button(odd number on board)
-            {
-                if (boardButtons[i-1].getText()==removedButtons[i-1].getText())
-                {
-                    num++;
-                }
-            }
-        }
-        if(full&&num==25)
+
+        if(full)//todo: finish this
         {
             timeSwapBuff += timeInMilliseconds;
             customHandler.removeCallbacks(updateTimerThread);
