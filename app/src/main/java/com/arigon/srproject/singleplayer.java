@@ -26,8 +26,7 @@ public class singleplayer extends AppCompatActivity {
     String value;
     Button currButton;
     private TextView alert;
-    //players turn
-    int turn = 1;
+    Integer[] arr;
 
     Button[] choiceButtons = new Button[25];//array of possible buttons
     Button[] boardButtons = new Button[49];//array of board buttons
@@ -466,7 +465,7 @@ public class singleplayer extends AppCompatActivity {
         while (!acceptable) {
             int errors = 0;
             //array to contain random numbers
-            Integer[] arr = new Integer[25];
+            arr = new Integer[25];
             for (int i = 0; i < arr.length; i++) {
                 arr[i] = i + 1;
             }
@@ -554,7 +553,6 @@ public class singleplayer extends AppCompatActivity {
             if(i%2 ==0)//check if it is a light button(odd number on board)
             {
                 //add to array of buttons
-                //Button btn = (Button) findViewById(buttonIDs[i]);
                 removedButtons[i]=boardButtons[i];//set selected button to removedButtons array
                 //delete text from some buttons
                 int x = (int) (Math.random() * 2);
@@ -1173,7 +1171,9 @@ public class singleplayer extends AppCompatActivity {
     {
         boolean full = true;
         int num = 0;
+        int j = 0;
 
+        //check if the board is full
         for(int i=0;i<49;i++)
         {
             if(boardButtons[i].getText()=="")
@@ -1183,7 +1183,21 @@ public class singleplayer extends AppCompatActivity {
 
         }
 
-        if(full)//todo: finish this
+        //check if the numbers on the board match the computer generated numbers
+        for(int i=0;i<49;i++)
+        {
+            if(i/2==0)
+            {
+                if(boardButtons[i].getText().toString()==arr[j].toString())
+                {
+                    num++;
+                }
+                j++;
+            }
+
+        }
+
+        if(full&&num==25)
         {
             timeSwapBuff += timeInMilliseconds;
             customHandler.removeCallbacks(updateTimerThread);
@@ -1210,8 +1224,6 @@ public class singleplayer extends AppCompatActivity {
         }
 
     }
-
-
 
 }
 
