@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //this is a test
+//this is another test
 
 public class board7 extends AppCompatActivity {
     boolean clicked = false;
