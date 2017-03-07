@@ -16,6 +16,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+//this is a test
 
 public class board7 extends AppCompatActivity {
     boolean clicked = false;
