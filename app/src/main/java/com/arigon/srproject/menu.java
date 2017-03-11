@@ -26,7 +26,7 @@ public class menu extends AppCompatActivity {
     {
 
         //go to the 7x7 board when button is clicked
-        if(v.getId() == R.id.seven)
+        if(v.getId() == R.id.two)
         {
             Intent i = new Intent(menu.this, board7.class);
             startActivity(i);

@@ -21,9 +21,9 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/seven"
+            android:text="@string/two"
             android:onClick="click"
-            android:id="@+id/seven"
+            android:id="@+id/two"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"/>
 

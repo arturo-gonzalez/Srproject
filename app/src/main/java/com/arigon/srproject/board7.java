@@ -673,13 +673,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
 
                 }
             }
@@ -693,13 +690,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -712,13 +706,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -731,13 +722,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -750,13 +738,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -769,13 +754,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -788,13 +770,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -807,13 +786,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -826,13 +802,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -845,13 +818,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -864,13 +834,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -883,13 +850,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -902,13 +866,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -921,13 +882,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -940,13 +898,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -959,13 +914,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert ))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -978,13 +930,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -997,13 +946,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -1016,13 +962,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -1035,13 +978,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -1054,13 +994,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -1073,13 +1010,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -1092,13 +1026,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
             }
         });
@@ -1111,13 +1042,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
 
             }
@@ -1131,13 +1059,10 @@ public class board7 extends AppCompatActivity {
                 Button btn=(Button) v;
                 if(clicked&&btn.getText().length() == 0&&checkIfValid(btn, alert))
                 {
-                    if(turn ==1)
-                    {
-                        btn.setText(value);
-                        clicked = false;
-                        currButton.setEnabled(false);
-                        turn =2;
-                    }
+                    btn.setText(value);
+                    clicked = false;
+                    currButton.setEnabled(false);
+                    changeColor(btn);
                 }
 
             }
@@ -1148,7 +1073,7 @@ public class board7 extends AppCompatActivity {
         //cp thread
         //runs when turn == 2 (computer player turn)
         ////////////////////////////////////////////
-        Thread t = new Thread() {
+        /*Thread t = new Thread() {
 
             @Override
             public void run() {
@@ -1161,8 +1086,6 @@ public class board7 extends AppCompatActivity {
                                 if(turn ==2)
                                 btn3.setText("1"); //just a test
                                 turn = 1;
-
-                                //todo: work on computers choice of number and placing on board
                                 // call AI function
 
 
@@ -1173,7 +1096,7 @@ public class board7 extends AppCompatActivity {
                 }
             }
         };
-    t.start();
+    t.start();*/
     }
 
 
@@ -4374,21 +4297,20 @@ public class board7 extends AppCompatActivity {
 
     }
 
-    //TODO: Minimax fnction
-    void minimax()
+    void changeColor(Button btn)
     {
+        if(turn ==1) {
+            btn.setBackgroundColor(Color.RED);
+            turn = 2;
+        }
+        else if(turn==2)
+        {
+            btn.setBackgroundColor(Color.BLUE);
+            turn  = 1;
+        }
 
     }
 
-    void maxValue()
-    {
-
-    }
-
-    void minValue()
-    {
-
-    }
 
 }
 
