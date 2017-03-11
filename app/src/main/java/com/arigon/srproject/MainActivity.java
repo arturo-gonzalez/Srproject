@@ -3,7 +3,6 @@ package com.arigon.srproject;
 
         import android.content.Intent;
         import android.graphics.Color;
-        import android.icu.text.Replaceable;
         import android.os.Bundle;
         import android.support.v7.app.AppCompatActivity;
         import android.view.View;
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.board7);
+        setContentView(R.layout.twoplayer);
 
         final TextView alert=(TextView) findViewById(R.id.textView1);//textview that shows message
 

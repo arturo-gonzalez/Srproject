@@ -1,6 +1,5 @@
 package com.arigon.srproject;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +27,7 @@ public class menu extends AppCompatActivity {
         //go to the 7x7 board when button is clicked
         if(v.getId() == R.id.two)
         {
-            Intent i = new Intent(menu.this, board7.class);
+            Intent i = new Intent(menu.this, twoplayer.class);
             startActivity(i);
 
         }

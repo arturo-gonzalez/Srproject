@@ -34,7 +34,7 @@ public class oneszeros extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.board7);
+        setContentView(R.layout.twoplayer);
 
         final TextView alert=(TextView) findViewById(R.id.textView1);//textview that shows message
 

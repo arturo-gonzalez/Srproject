@@ -13,14 +13,11 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 //this is a test
 //this is another test
 //this is a third test
 
-public class board7 extends AppCompatActivity {
+public class twoplayer extends AppCompatActivity {
     boolean clicked = false;
     String value;
     Button currButton;
@@ -37,7 +34,7 @@ public class board7 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.board7);
+        setContentView(R.layout.twoplayer);
 
         final TextView alert=(TextView) findViewById(R.id.textView1);//textview that shows message
 
@@ -562,7 +559,7 @@ public class board7 extends AppCompatActivity {
             {
                 if(v.getId() == R.id.button27)
                 {
-                    Intent i = new Intent(board7.this, menu.class);
+                    Intent i = new Intent(twoplayer.this, menu.class);
                     startActivity(i);
 
                 }
