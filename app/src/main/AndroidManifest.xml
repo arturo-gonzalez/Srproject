@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".oneszeros">
         </activity>
+        <activity android:name=".TwoPlayerVar">
+        </activity>
     </application>
 
 </manifest>

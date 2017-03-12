@@ -8,4 +8,5 @@
     <string name="test">AI test (MainActivity)</string>
     <string name="CP">CP</string>
     <string name="two">Two Players</string>
+    <string name="tpvar">2PVar</string>
 </resources>

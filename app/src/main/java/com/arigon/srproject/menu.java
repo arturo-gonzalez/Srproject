@@ -24,7 +24,7 @@ public class menu extends AppCompatActivity {
     public void click(View v)
     {
 
-        //go to the 7x7 board when button is clicked
+        //go to the 2 player board when button is clicked
         if(v.getId() == R.id.two)
         {
             Intent i = new Intent(menu.this, twoplayer.class);
@@ -49,6 +49,14 @@ public class menu extends AppCompatActivity {
 
         //go to the test game when button is clicked
         if(v.getId() == R.id.test)
+        {
+            Intent i = new Intent(menu.this, MainActivity.class);
+            startActivity(i);
+
+        }
+
+        //go to the two player var  game when button is clicked
+        if(v.getId() == R.id.tpvar)
         {
             Intent i = new Intent(menu.this, MainActivity.class);
             startActivity(i);
