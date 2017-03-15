@@ -1,5 +1,9 @@
+
+
+
 package com.arigon.srproject;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -18,7 +22,8 @@ public class TwoPlayerVar extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main); This caused the null pointer exception
+        setContentView(R.layout.twoplayervs);   //The correct code
 
         TableLayout gameboard = (TableLayout) findViewById(R.id.gameboard);
 
