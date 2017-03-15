@@ -1064,36 +1064,6 @@ public class twoplayer extends AppCompatActivity {
 
             }
         });
-
-
-        ////////////////////////////////////////////
-        //cp thread
-        //runs when turn == 2 (computer player turn)
-        ////////////////////////////////////////////
-        /*Thread t = new Thread() {
-
-            @Override
-            public void run() {
-                try {
-                    while (!isInterrupted()) {
-                        Thread.sleep(1000);
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                if(turn ==2)
-                                btn3.setText("1"); //just a test
-                                turn = 1;
-                                // call AI function
-
-
-                            }
-                        });
-                    }
-                } catch (InterruptedException e) {
-                }
-            }
-        };
-    t.start();*/
     }
 
 
@@ -4281,7 +4251,7 @@ public class twoplayer extends AppCompatActivity {
 
                     }
                     else if(boardButtons[i-14].getText()!=""&&boardButtons[i+2].getText()!=""&&boardButtons[i-2].getText()!=""&&boardButtons[i+14].getText()!="")
-                    { ///todo:inner buttons that are surrounded by 4 numbers
+                    { ///todo:inner buttons that are surrounded by 4 numbers(this is done)
                         if(boardButtons[i-1].getText()==">"&&boardButtons[i+7].getText()==">"&&boardButtons[i+1].getText()==">"&&boardButtons[i-7].getText()=="<")
                         {
                             if(Integer.parseInt(String.valueOf(value)) < Integer.parseInt(String.valueOf(boardButtons[i-2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+14].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i+2].getText()))&&Integer.parseInt(String.valueOf(value)) > Integer.parseInt(String.valueOf(boardButtons[i-14].getText())))

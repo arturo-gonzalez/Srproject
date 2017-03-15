@@ -58,7 +58,14 @@ public class menu extends AppCompatActivity {
         //go to the two player var  game when button is clicked
         if(v.getId() == R.id.tpvar)
         {
-            Intent i = new Intent(menu.this, MainActivity.class);
+            Intent i = new Intent(menu.this, TwoPlayerVar.class);
+            startActivity(i);
+
+        }
+        //go to the two player var2  game when button is clicked
+        if(v.getId() == R.id.tpvar2)
+        {
+            Intent i = new Intent(menu.this, TwoPlayerVar2.class);
             startActivity(i);
 
         }
