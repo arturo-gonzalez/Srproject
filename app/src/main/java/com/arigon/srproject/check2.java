@@ -32,7 +32,7 @@ public class check2{
                 return false;
             }
         }
-        if(column - 2 < boardButtons[row].length && boardButtons[row][column + 2].getText().toString().length() > 0){
+        if(column + 2 < boardButtons[row].length && boardButtons[row][column + 2].getText().toString().length() > 0){
             if(boardButtons[row][column + 1].getText() == "<" && Integer.parseInt(boardButtons[row][column + 2].getText().toString()) <= Integer.parseInt(value)
                     || boardButtons[row][column + 1].getText() == ">" && Integer.parseInt(boardButtons[row][column + 2].getText().toString()) >= Integer.parseInt(value)) {
                 return false;

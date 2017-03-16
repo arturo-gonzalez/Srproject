@@ -16,11 +16,13 @@ import android.widget.TextView;
 
 public class TwoPlayerVar2 extends AppCompatActivity {
 
-    public static int lsize = 9;
-    public static  int wsize = 9;
+    public static int lsize = 5;
+    public static  int wsize = 5;
     //preparation of the checkerboard
     SquareButton[][] boardButtons = new SquareButton[lsize][wsize];
+    boolean clicked = false;
     String value;
+    Button currButton;
     check2 c = new check2();
 
     @Override
@@ -91,8 +93,10 @@ public class TwoPlayerVar2 extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             SquareButton button = (SquareButton) v;
-                            if (c.checkIfValid(button, boardButtons, value)) {
+                            if (clicked&&button.getText().length() == 0&&c.checkIfValid(button, boardButtons, value)) {
                                 button.setText(value);
+                                clicked = false;
+                                currButton.setEnabled(false);
                             }
                         }
 
@@ -114,9 +118,15 @@ public class TwoPlayerVar2 extends AppCompatActivity {
 
                 @Override
                 public void onClick(View v){
+                    if(clicked)
+                    {
+                        currButton.setBackgroundColor(Color.GRAY);
+                    }
                     v.setBackgroundColor(Color.WHITE);
                     Button button=(Button) v;
                     value = button.getText().toString();
+                    clicked = true;
+                    currButton = button;
                 }
 
             });
