@@ -11,7 +11,7 @@ public class check2{
     //return true if its ok to place the number
     //return false if not
     ///////////////////////////////////////////////////////////////////
-    public Boolean checkIfValid(SquareButton button, TextView alert, SquareButton[][] boardButtons, String value) {
+    public Boolean checkIfValid(SquareButton button, SquareButton[][] boardButtons, String value) {
         int row = button.row;
         int column = button.column;
         if(row - 2 > 0 && boardButtons[row - 2][column].getText().toString().length() > 0) {
