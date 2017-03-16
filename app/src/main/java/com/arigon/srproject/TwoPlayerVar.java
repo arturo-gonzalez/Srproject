@@ -16,8 +16,9 @@ import android.widget.TableRow;
 
 public class TwoPlayerVar extends AppCompatActivity {
 
+    //board lengths, they don't need to be static
     public static int lsize = 9;
-    public static  int wsize = 9;
+    public static int wsize = 9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class TwoPlayerVar extends AppCompatActivity {
 
         TableLayout gameboard = (TableLayout) findViewById(R.id.gameboard);
 
+        //generic parameters that I set most of the buttons to use
         TableRow.LayoutParams bparams = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
         bparams.weight = 1.0f;
 

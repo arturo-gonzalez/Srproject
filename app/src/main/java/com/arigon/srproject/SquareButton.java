@@ -8,6 +8,9 @@ import android.widget.Button;
  */
 
 public class SquareButton extends Button {
+    public int row;
+    public int column;
+
     public SquareButton(android.content.Context context) {
         super(context);
     }

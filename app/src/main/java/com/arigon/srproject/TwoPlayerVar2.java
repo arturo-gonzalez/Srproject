@@ -19,11 +19,9 @@ public class TwoPlayerVar2 extends AppCompatActivity {
     public static int lsize = 7;
     public static  int wsize = 7;
     //preparation of the checkerboard
-    SquareButton[] boardButtons = new SquareButton[lsize*wsize];
-    boolean clicked = false;
+    SquareButton[][] boardButtons = new SquareButton[lsize][wsize];
     String value;
-    Button currButton;
-    check c = new check();
+    check2 c = new check2();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +43,15 @@ public class TwoPlayerVar2 extends AppCompatActivity {
             for (int j = 0; j < wsize; j++) {
                 SquareButton b = new SquareButton(this);
                 b.setLayoutParams(bparams);
+                b.row = i;
+                b.column = j;
                 if ((wsize * i + j) % 2 == 0) {
                     b.setBackgroundColor(ContextCompat.getColor(this, R.color.light));
                 } else {
                     b.setBackgroundColor(ContextCompat.getColor(this, R.color.dark));
                 }
                 row.addView(b);
-                boardButtons[wsize*i +j] = b;
+                boardButtons[i][j] = b;
             }
             row.setWeightSum(wsize);
             gameboard.addView(row, TableLayout.LayoutParams.MATCH_PARENT, TableLayout.LayoutParams.WRAP_CONTENT);
@@ -81,28 +81,26 @@ public class TwoPlayerVar2 extends AppCompatActivity {
         }
 
         //setting up click listeners and text for the gameboard
-        for(int i = 0; i < boardButtons.length; i++)
-        {
-            SquareButton b = boardButtons[i];
-            if(i % 2 == 0){
-                b.setOnClickListener(new View.OnClickListener(){
+        for(int i = 0; i < boardButtons.length; i++) {
+            for (int j = 0; j < boardButtons[i].length; j++) {
+                SquareButton b = boardButtons[i][j];
+                if (i % 2 == 0) {
+                    b.setOnClickListener(new View.OnClickListener() {
 
-                    @Override
-                    public void onClick(View v){
-                        Button button=(Button) v;
-                        if(clicked&&button.getText().length() == 0&&c.checkIfValid(button,alert, boardButtons, value))
-                        {
-                            button.setText(value);
-                            clicked = false;
-                            currButton.setEnabled(false);
+                        @Override
+                        public void onClick(View v) {
+                            SquareButton button = (SquareButton) v;
+                            if (c.checkIfValid(button, alert, boardButtons, value)) {
+                                button.setText(value);
+                            }
                         }
-                    }
 
-                });
-            }else {
-                b.setText(">");
+                    });
+                } else {
+                    b.setText(">");
+                }
+
             }
-
         }
 
         //setting up click listeners and text for the numberboard
@@ -115,16 +113,9 @@ public class TwoPlayerVar2 extends AppCompatActivity {
 
                 @Override
                 public void onClick(View v){
-                    if(clicked)
-                    {
-                        currButton.setBackgroundColor(Color.GRAY);
-                    }
                     v.setBackgroundColor(Color.WHITE);
                     Button button=(Button) v;
                     value = button.getText().toString();
-
-                    clicked = true;
-                    currButton = button;
                 }
 
             });
