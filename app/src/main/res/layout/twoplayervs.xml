@@ -12,29 +12,54 @@
     android:background="@color/background"
     tools:context="com.arigon.srproject.TwoPlayerVar">
 
-    <TextView
-        android:text="TextView"
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:id="@+id/textView1"
-        android:layout_height="40dp"
-        android:background="@color/bg"
-        android:textStyle="bold"
-        android:textColor="?attr/colorControlNormal"
-        android:textSize="24dp"
-        android:padding="5dp"/>
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/textView1"
+            android:layout_height="40dp"
+            android:background="@android:color/white"
+            android:textStyle="bold"
+            android:textColor="?attr/colorControlNormal"
+            android:textSize="14dp"
+            android:padding="1dp"
+            android:layout_weight="1"
+            />
+
+        <Button
+            android:text="Quit"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:id="@+id/exitButton"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
 
     <TableLayout
         android:id="@+id/gameboard"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/LinearLayout1"
+        android:textStyle="bold"
+        android:textColor="?attr/colorControlNormal"
+        android:textSize="24dp"
+        android:padding="5dp"
         />
 
     <TableLayout
         android:id="@+id/numberboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/gameboard"/>
+        android:layout_below="@id/gameboard"
+        android:textStyle="bold"
+        android:textColor="?attr/colorControlNormal"
+        android:textSize="24dp"
+        android:padding="5dp"/>
 
 </RelativeLayout>

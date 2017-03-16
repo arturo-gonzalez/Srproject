@@ -1,5 +1,6 @@
 package com.arigon.srproject;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -9,6 +10,9 @@ import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+
+import static com.arigon.srproject.R.layout.twoplayervs;
+
 
 /**
  * Created by art on 3/15/2017.
@@ -30,8 +34,22 @@ public class TwoPlayerVar2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.twoplayervs);
+        setContentView(twoplayervs);
         final TextView alert=(TextView) findViewById(R.id.textView1);//textview that shows message
+
+        Button exit = (Button) findViewById(R.id.exitButton);
+        exit.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v)
+            {
+                if(v.getId() == R.id.exitButton)
+                {
+                    Intent i = new Intent(TwoPlayerVar2.this, menu.class);
+                    startActivity(i);
+                }
+            }
+        });
 
         TableLayout gameboard = (TableLayout) findViewById(R.id.gameboard);
 
@@ -99,7 +117,10 @@ public class TwoPlayerVar2 extends AppCompatActivity {
                                 button.setText(value);
                                 clicked = false;
                                 currButton.setEnabled(false);
+                                alert.setText("");
                             }
+                            else
+                                alert.setText("Can't place that number there");
                         }
 
                     });
