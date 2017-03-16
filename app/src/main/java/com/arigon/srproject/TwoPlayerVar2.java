@@ -16,8 +16,8 @@ import android.widget.TextView;
 
 public class TwoPlayerVar2 extends AppCompatActivity {
 
-    public static int lsize = 7;
-    public static  int wsize = 7;
+    public static int lsize = 9;
+    public static  int wsize = 9;
     //preparation of the checkerboard
     SquareButton[][] boardButtons = new SquareButton[lsize][wsize];
     String value;
@@ -84,7 +84,8 @@ public class TwoPlayerVar2 extends AppCompatActivity {
         for(int i = 0; i < boardButtons.length; i++) {
             for (int j = 0; j < boardButtons[i].length; j++) {
                 SquareButton b = boardButtons[i][j];
-                if (i % 2 == 0) {
+                //if(i % 2 == 0){ changed because it was only placing signs on odd rows
+                if ((i % 2 == 0 && j%2==0)||(i % 2 == 1 && j%2==1)) {
                     b.setOnClickListener(new View.OnClickListener() {
 
                         @Override

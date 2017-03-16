@@ -14,6 +14,7 @@ public class check2{
     public Boolean checkIfValid(SquareButton button, TextView alert, SquareButton[][] boardButtons, String value) {
         int row = button.row;
         int column = button.column;
+
         if(row - 2 > 0) {
             if(boardButtons[row - 1][column].getText() == "<" && Integer.parseInt(boardButtons[row-2][column].getText().toString()) >= Integer.parseInt(value)
                     || boardButtons[row - 1][column].getText() == ">" && Integer.parseInt(boardButtons[row-2][column].getText().toString()) <= Integer.parseInt(value)) {
