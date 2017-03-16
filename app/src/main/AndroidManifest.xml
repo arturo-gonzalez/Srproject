@@ -26,6 +26,8 @@
         </activity>
         <activity android:name=".TwoPlayerVar">
         </activity>
+        <activity android:name=".TwoPlayerVar2">
+        </activity>
     </application>
 
 </manifest>

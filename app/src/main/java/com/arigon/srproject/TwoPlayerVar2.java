@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 /**
  * Created by art on 3/15/2017.
@@ -15,21 +16,25 @@ import android.widget.TableRow;
 
 public class TwoPlayerVar2 extends AppCompatActivity {
 
-    public static int lsize = 9;
-    public static  int wsize = 9;
+    public static int lsize = 7;
+    public static  int wsize = 7;
+    //preparation of the checkerboard
+    SquareButton[] boardButtons = new SquareButton[lsize*wsize];
+    String value;
+    check c = new check();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.twoplayervs);
+        final TextView alert=(TextView) findViewById(R.id.textView1);//textview that shows message
 
         TableLayout gameboard = (TableLayout) findViewById(R.id.gameboard);
 
         TableRow.LayoutParams bparams = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT);
         bparams.weight = 1.0f;
 
-        //preparation of the checkerboard
-        SquareButton[] boardButtons = new SquareButton[lsize*wsize];
+
 
         for(int i = 0; i < lsize; i++) {
 
@@ -82,7 +87,11 @@ public class TwoPlayerVar2 extends AppCompatActivity {
 
                     @Override
                     public void onClick(View v){
-                        v.setBackgroundColor(Color.GRAY);
+                        Button button=(Button) v;
+                        if(c.checkIfValid(button,alert, boardButtons, value))
+                        {
+                            button.setText(value);
+                        }
                     }
 
                 });
@@ -103,10 +112,14 @@ public class TwoPlayerVar2 extends AppCompatActivity {
                 @Override
                 public void onClick(View v){
                     v.setBackgroundColor(Color.WHITE);
+                    Button button=(Button) v;
+                    value = button.getText().toString();
                 }
 
             });
 
         }
     }
+
+
 }

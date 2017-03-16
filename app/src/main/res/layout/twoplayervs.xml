@@ -12,14 +12,29 @@
     android:background="@color/background"
     tools:context="com.arigon.srproject.TwoPlayerVar">
 
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:id="@+id/textView1"
+        android:layout_height="40dp"
+        android:background="@color/bg"
+        android:textStyle="bold"
+        android:textColor="?attr/colorControlNormal"
+        android:textSize="24dp"
+        android:padding="5dp"/>
+
     <TableLayout
         android:id="@+id/gameboard"
+
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        />
 
     <TableLayout
         android:id="@+id/numberboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/gameboard"/>
+
 </RelativeLayout>
