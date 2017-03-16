@@ -90,7 +90,7 @@ public class TwoPlayerVar2 extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             SquareButton button = (SquareButton) v;
-                            if (c.checkIfValid(button, alert, boardButtons, value)) {
+                            if (c.checkIfValid(button, boardButtons, value)) {
                                 button.setText(value);
                             }
                         }
