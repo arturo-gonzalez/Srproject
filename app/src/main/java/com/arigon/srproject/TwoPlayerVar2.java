@@ -20,7 +20,9 @@ public class TwoPlayerVar2 extends AppCompatActivity {
     public static  int wsize = 7;
     //preparation of the checkerboard
     SquareButton[] boardButtons = new SquareButton[lsize*wsize];
+    boolean clicked = false;
     String value;
+    Button currButton;
     check c = new check();
 
     @Override
@@ -88,9 +90,11 @@ public class TwoPlayerVar2 extends AppCompatActivity {
                     @Override
                     public void onClick(View v){
                         Button button=(Button) v;
-                        if(c.checkIfValid(button,alert, boardButtons, value))
+                        if(clicked&&button.getText().length() == 0&&c.checkIfValid(button,alert, boardButtons, value))
                         {
                             button.setText(value);
+                            clicked = false;
+                            currButton.setEnabled(false);
                         }
                     }
 
@@ -111,9 +115,16 @@ public class TwoPlayerVar2 extends AppCompatActivity {
 
                 @Override
                 public void onClick(View v){
+                    if(clicked)
+                    {
+                        currButton.setBackgroundColor(Color.GRAY);
+                    }
                     v.setBackgroundColor(Color.WHITE);
                     Button button=(Button) v;
                     value = button.getText().toString();
+
+                    clicked = true;
+                    currButton = button;
                 }
 
             });
