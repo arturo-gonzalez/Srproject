@@ -16,14 +16,16 @@ import android.widget.TextView;
 
 public class TwoPlayerVar2 extends AppCompatActivity {
 
-    public static int lsize = 5;
-    public static  int wsize = 5;
+    public static int lsize = 9;
+    public static  int wsize = 9;
     //preparation of the checkerboard
     SquareButton[][] boardButtons = new SquareButton[lsize][wsize];
     boolean clicked = false;
     String value;
     Button currButton;
     check2 c = new check2();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,7 +104,7 @@ public class TwoPlayerVar2 extends AppCompatActivity {
 
                     });
                 } else {
-                    b.setText(">");
+                    b.setText(randomSign());
                 }
 
             }
@@ -132,6 +134,20 @@ public class TwoPlayerVar2 extends AppCompatActivity {
             });
 
         }
+    }
+
+    ///////////////////////////////////////////////////////////////////
+    //randomString generates a random < or >
+    ///////////////////////////////////////////////////////////////////
+    public String randomSign(){
+        String v;
+        int x = (int) (Math.random() * 2);
+        if(x == 1)
+            v = ">";
+        else
+            v = "<";
+
+        return v;
     }
 
 
