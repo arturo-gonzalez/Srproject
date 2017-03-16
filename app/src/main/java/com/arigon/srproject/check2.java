@@ -14,25 +14,29 @@ public class check2{
     public Boolean checkIfValid(SquareButton button, SquareButton[][] boardButtons, String value) {
         int row = button.row;
         int column = button.column;
+        //check above
         if(row - 2 >= 0 && boardButtons[row - 2][column].getText().toString().length() > 0) {
             if(boardButtons[row - 1][column].getText() == "<" && Integer.parseInt(boardButtons[row-2][column].getText().toString()) >= Integer.parseInt(value)
                     || boardButtons[row - 1][column].getText() == ">" && Integer.parseInt(boardButtons[row-2][column].getText().toString()) <= Integer.parseInt(value)) {
                 return false;
             }
         }
+        //check to the left
         if(column - 2 >= 0 && boardButtons[row][column - 2].getText().toString().length() > 0){
             if(boardButtons[row][column - 1].getText() == "<" && Integer.parseInt(boardButtons[row][column - 2].getText().toString()) >= Integer.parseInt(value)
                     || boardButtons[row][column - 1].getText() == ">" && Integer.parseInt(boardButtons[row][column - 2].getText().toString()) <= Integer.parseInt(value)) {
                 return false;
             }
         }
+        //check below
         if(row + 2 < boardButtons.length && boardButtons[row + 2][column].getText().toString().length() > 0){
             if(boardButtons[row + 1][column].getText() == "<" && Integer.parseInt(boardButtons[row + 2][column].getText().toString()) <= Integer.parseInt(value)
                     || boardButtons[row + 1][column].getText() == ">" && Integer.parseInt(boardButtons[row + 2][column].getText().toString()) >= Integer.parseInt(value)) {
                 return false;
             }
         }
-        if(column - 2 < boardButtons[row].length && boardButtons[row][column + 2].getText().toString().length() > 0){
+        //check to the right
+        if(column + 2 < boardButtons[row].length && boardButtons[row][column + 2].getText().toString().length() > 0){
             if(boardButtons[row][column + 1].getText() == "<" && Integer.parseInt(boardButtons[row][column + 2].getText().toString()) <= Integer.parseInt(value)
                     || boardButtons[row][column + 1].getText() == ">" && Integer.parseInt(boardButtons[row][column + 2].getText().toString()) >= Integer.parseInt(value)) {
                 return false;
