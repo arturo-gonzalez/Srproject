@@ -42,7 +42,7 @@ public class menu extends AppCompatActivity {
         //go to the single player game when button is clicked
         if(v.getId() == R.id.single)
         {
-            Intent i = new Intent(menu.this, singleplayer.class);
+            Intent i = new Intent(menu.this, singleplayer2.class);
             startActivity(i);
 
         }

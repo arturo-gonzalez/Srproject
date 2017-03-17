@@ -94,11 +94,7 @@ public class TwoPlayerVar2 extends AppCompatActivity {
             for(int j = 0; j < rowRange; j++){
                 Button b = new Button(this);
                 b.setLayoutParams(bparams);
-                if (i % 2 == j % 2){
-                    b.setBackgroundColor(ContextCompat.getColor(this, R.color.grey));
-                } else {
-                    b.setBackgroundColor(Color.BLUE);
-                }
+                b.setBackgroundColor(ContextCompat.getColor(this, R.color.grey));
                 numrow.addView(b);
                 numberButtons[rowRange*i + j] = b;
             }

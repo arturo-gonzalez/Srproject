@@ -525,8 +525,8 @@ public class singleplayer extends AppCompatActivity {
                 if (boardButtons[i] == boardButtons[9] || boardButtons[i] == boardButtons[11] || boardButtons[i] == boardButtons[15] || boardButtons[i] == boardButtons[17] || boardButtons[i] == boardButtons[19] || boardButtons[i] == boardButtons[23] || boardButtons[i] == boardButtons[25] || boardButtons[i] == boardButtons[29] || boardButtons[i] == boardButtons[31] || boardButtons[i] == boardButtons[33] || boardButtons[i] == boardButtons[37] || boardButtons[i] == boardButtons[39]) {
                     if (Integer.parseInt(String.valueOf(boardButtons[i - 7].getText())) > Integer.parseInt(String.valueOf(boardButtons[i + 7].getText())) && Integer.parseInt(String.valueOf(boardButtons[i - 1].getText())) > Integer.parseInt(String.valueOf(boardButtons[i + 1].getText()))) {
                         boardButtons[i].setText(">");
-                    } else if (Integer.parseInt(String.valueOf(boardButtons[i - 7].getText())) < Integer.parseInt(String.valueOf(boardButtons[i + 7].getText())) && Integer.parseInt(String.valueOf(boardButtons[i - 1].getText())) < Integer.parseInt(String.valueOf(boardButtons[i + 1].getText())))
-
+                    }
+                    else if (Integer.parseInt(String.valueOf(boardButtons[i - 7].getText())) < Integer.parseInt(String.valueOf(boardButtons[i + 7].getText())) && Integer.parseInt(String.valueOf(boardButtons[i - 1].getText())) < Integer.parseInt(String.valueOf(boardButtons[i + 1].getText())))
                     {
                         boardButtons[i].setText("<");
                     } else {
