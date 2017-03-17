@@ -20,14 +20,16 @@ import static com.arigon.srproject.R.layout.twoplayervs;
 
 public class TwoPlayerVar2 extends AppCompatActivity {
 
-    public static int lsize = 9;
-    public static  int wsize = 9;
+    public static int lsize = 7;
+    public static  int wsize = 7;
     //preparation of the checkerboard
     SquareButton[][] boardButtons = new SquareButton[lsize][wsize];
     boolean clicked = false;
     String value;
     Button currButton;
     check2 c = new check2();
+    //players turn
+    int turn = 1;
 
 
 
@@ -37,6 +39,8 @@ public class TwoPlayerVar2 extends AppCompatActivity {
         setContentView(twoplayervs);
         final TextView alert=(TextView) findViewById(R.id.textView1);//textview that shows message
 
+
+        //exit button
         Button exit = (Button) findViewById(R.id.exitButton);
         exit.setOnClickListener(new View.OnClickListener() {
 
@@ -117,10 +121,11 @@ public class TwoPlayerVar2 extends AppCompatActivity {
                                 button.setText(value);
                                 clicked = false;
                                 currButton.setEnabled(false);
+                                changeColor(button);
                                 alert.setText("");
                             }
                             else
-                                alert.setText("Can't place that number there");
+                                alert.setText("Not a valid move");
                         }
 
                     });
@@ -169,6 +174,32 @@ public class TwoPlayerVar2 extends AppCompatActivity {
             v = "<";
 
         return v;
+    }
+
+    //////////////////////////////////////////////////////////////////
+    //Change button color when players click it
+    //////////////////////////////////////////////////////////////////
+    void changeColor(Button btn)
+    {
+        if(turn ==1) {
+            btn.setBackgroundColor(Color.RED);
+            turn = 2;
+        }
+        else if(turn==2)
+        {
+            btn.setBackgroundColor(Color.BLUE);
+            turn  = 1;
+        }
+    }
+
+    ////////////////////////////////////////////////////////////////
+    //check if there are four squares of the same color in a row
+    //check if board is full
+    //check if one player has no moves left
+    ////////////////////////////////////////////////////////////////
+    void checkForWin()
+    {
+
     }
 
 
