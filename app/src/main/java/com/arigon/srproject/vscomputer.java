@@ -13,12 +13,16 @@ import android.widget.TextView;
 
 import static com.arigon.srproject.R.layout.twoplayervs;
 
-
 /**
- * Created by art on 3/15/2017.
+ * Created by art on 3/19/2017.
  */
 
-public class TwoPlayerVar2 extends AppCompatActivity {
+class State//todo:state class
+{
+
+}
+
+public class vscomputer extends AppCompatActivity {
 
     public static int lsize = 7;
     public static  int wsize = 7;
@@ -49,7 +53,7 @@ public class TwoPlayerVar2 extends AppCompatActivity {
             {
                 if(v.getId() == R.id.exitButton)
                 {
-                    Intent i = new Intent(TwoPlayerVar2.this, menu.class);
+                    Intent i = new Intent(vscomputer.this, menu.class);
                     startActivity(i);
                 }
             }
@@ -193,7 +197,15 @@ public class TwoPlayerVar2 extends AppCompatActivity {
     //check if board is full
     //check if one player has no moves left
     ////////////////////////////////////////////////////////////////
-    void checkForWin()//todo:check for win
+    void checkForWin()
+    {
+
+    }
+
+    ////////////////////////////////////////////////////////////////
+    //AI//todo:minimax
+    //////////////////////////////////////////////////////////////
+    void minimax()
     {
 
     }
