@@ -19,8 +19,18 @@ import static com.arigon.srproject.R.layout.twoplayervs;
 
 class State//todo:state class
 {
+    Button[] state;
+    int depth;
+    public int value;
+
+    public State(Button[] state1, int depth1)
+    {
+        state = state1;
+        depth = depth1;
+    }
 
 }
+
 
 public class vscomputer extends AppCompatActivity {
 
@@ -202,13 +212,7 @@ public class vscomputer extends AppCompatActivity {
 
     }
 
-    ////////////////////////////////////////////////////////////////
-    //AI//todo:minimax
-    //////////////////////////////////////////////////////////////
-    void minimax()
-    {
 
-    }
 
 
 }
