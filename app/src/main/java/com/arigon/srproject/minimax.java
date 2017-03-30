@@ -49,7 +49,7 @@ public class minimax {
         return v;
     }
 
-    //return each posible state reachable from a given state
+    //return each possible state reachable from a given state
     State[]  successors(State state)//todo: reachable states from any state
     {
         State[] states = new State[5];//5 is just a place holder, it should be the number of states
