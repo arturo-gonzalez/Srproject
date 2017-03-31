@@ -13,68 +13,32 @@
         android:layout_weight="1"/>
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/two"
-            android:onClick="click"
-            android:id="@+id/two"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/onezero"
-            android:onClick="click"
-            android:id="@+id/oneszeros"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"/>
-
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/single"
-            android:onClick="click"
-            android:id="@+id/single"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"/>
-    </LinearLayout>
-    <LinearLayout
+        android:layout_weight="3"
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:weightSum="2"
+        >
+
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/test"
-            android:onClick="click"
-            android:id="@+id/test"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tpvar"
-            android:onClick="click"
-            android:id="@+id/tpvar"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tpvar2"
-            android:onClick="click"
             android:id="@+id/tpvar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:onClick="click"
+            android:text="@string/tpvar2"
+            />
+
+        <Button
+            android:id="@+id/single"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:onClick="click"
+            android:text="@string/single"
+            />
     </LinearLayout>
 
 

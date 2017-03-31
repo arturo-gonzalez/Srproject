@@ -31,13 +31,6 @@ public class menu extends AppCompatActivity {
             startActivity(i);
 
         }
-        //go to the ones and zeros  game when button is clicked
-        if(v.getId() == R.id.oneszeros)
-        {
-            Intent i = new Intent(menu.this, oneszeros.class);
-            startActivity(i);
-
-        }
 
         //go to the single player game when button is clicked
         if(v.getId() == R.id.single)
@@ -47,13 +40,6 @@ public class menu extends AppCompatActivity {
 
         }
 
-        //go to the test game when button is clicked
-        if(v.getId() == R.id.test)
-        {
-            Intent i = new Intent(menu.this, MainActivity.class);
-            startActivity(i);
-
-        }
 
         //go to the two player var  game when button is clicked
         if(v.getId() == R.id.tpvar)

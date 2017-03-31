@@ -136,7 +136,7 @@ public class TwoPlayerVar2 extends AppCompatActivity {
         for(int i = 0; i < numberButtons.length; i++)
         {
             Button b = numberButtons[i];
-            b.setText(String.valueOf(i));
+            b.setText(String.valueOf(i+1));
 
             b.setOnClickListener(new View.OnClickListener(){
 

@@ -22,8 +22,6 @@
         </activity>
         <activity android:name=".singleplayer">
         </activity>
-        <activity android:name=".oneszeros">
-        </activity>
         <activity android:name=".TwoPlayerVar">
         </activity>
         <activity android:name=".TwoPlayerVar2">
