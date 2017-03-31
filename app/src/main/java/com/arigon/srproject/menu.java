@@ -24,14 +24,6 @@ public class menu extends AppCompatActivity {
     public void click(View v)
     {
 
-        //go to the 2 player board when button is clicked
-        if(v.getId() == R.id.two)
-        {
-            Intent i = new Intent(menu.this, twoplayer.class);
-            startActivity(i);
-
-        }
-
         //go to the single player game when button is clicked
         if(v.getId() == R.id.single)
         {
@@ -41,13 +33,6 @@ public class menu extends AppCompatActivity {
         }
 
 
-        //go to the two player var  game when button is clicked
-        if(v.getId() == R.id.tpvar)
-        {
-            Intent i = new Intent(menu.this, TwoPlayerVar.class);
-            startActivity(i);
-
-        }
         //go to the two player var2  game when button is clicked
         if(v.getId() == R.id.tpvar2)
         {
