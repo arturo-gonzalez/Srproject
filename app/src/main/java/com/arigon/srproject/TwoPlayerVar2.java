@@ -1,5 +1,7 @@
 package com.arigon.srproject;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -20,10 +22,9 @@ import static com.arigon.srproject.R.layout.twoplayervs;
 
 public class TwoPlayerVar2 extends AppCompatActivity {
 
-    public static int lsize = 7;
-    public static  int wsize = 7;
-    //preparation of the checkerboard
-    SquareButton[][] boardButtons = new SquareButton[lsize][wsize];
+    public int lsize = 7;
+    public  int wsize = 7;
+
     boolean clicked = false;
     String value;
     Button currButton;
@@ -33,12 +34,21 @@ public class TwoPlayerVar2 extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(twoplayervs);
         final TextView alert=(TextView) findViewById(R.id.textView1);//textview that shows message
 
+        //value from menu
+        Bundle bundle=getIntent().getExtras();
+        final Integer number=bundle.getInt("num");
+        alert.setText(number.toString());
+        lsize=number;
+        wsize=number;
+        //preparation of the checkerboard
+        final SquareButton[][] boardButtons = new SquareButton[lsize][wsize];
 
         //exit button
         Button exit = (Button) findViewById(R.id.exitButton);
@@ -119,6 +129,14 @@ public class TwoPlayerVar2 extends AppCompatActivity {
                                 currButton.setEnabled(false);
                                 changeColor(button);
                                 alert.setText("");
+                                checkForWin(turn, number, boardButtons);
+                                if(turn ==1) {
+                                    turn = 2;
+                                }
+                                else if(turn==2)
+                                {
+                                    turn  = 1;
+                                }
                             }
                             else
                                 alert.setText("Not a valid move");
@@ -179,12 +197,10 @@ public class TwoPlayerVar2 extends AppCompatActivity {
     {
         if(turn ==1) {
             btn.setBackgroundColor(Color.RED);
-            turn = 2;
         }
         else if(turn==2)
         {
             btn.setBackgroundColor(Color.BLUE);
-            turn  = 1;
         }
     }
 
@@ -193,8 +209,57 @@ public class TwoPlayerVar2 extends AppCompatActivity {
     //check if board is full
     //check if one player has no moves left
     ////////////////////////////////////////////////////////////////
-    void checkForWin()//todo:check for win
+    public void checkForWin(int turn, int number, SquareButton[][] boardButtons)
     {
+        lsize=number;
+        wsize=number;
+        boolean full = true;
+        String message = "";
+        if(turn==1)
+        {
+            message = "Red Wins";
+        }
+        else if (turn == 2)
+        {
+            message = "Blue Wins";
+        }
+
+        //check if the board is full
+        for(int i=0;i<lsize;i++)
+        {
+            for(int j = 0; j<wsize;j++)
+            {
+                if(boardButtons[i][j].getText()=="")
+                {
+                    full = false;
+                }
+            }
+        }
+
+
+        //if there are no available moves it means the game is over, show a dialog box
+        if(full)//todo:check if there are available moves
+        {
+
+            AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
+            myAlert.setMessage(message)
+                    .setPositiveButton("OK",new DialogInterface.OnClickListener(){
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        {
+                            dialog.dismiss();
+                            Intent i = new Intent(TwoPlayerVar2.this, menu.class);
+                            startActivity(i);
+                        }
+                    })
+                    //.setTitle("You Win!")
+                    .create();
+            myAlert.show();
+
+            //save score
+            //scoreList.add(timer);
+
+        }
 
     }
 
