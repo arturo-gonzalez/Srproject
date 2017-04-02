@@ -3,6 +3,7 @@ package com.arigon.srproject;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
@@ -46,7 +47,7 @@ public class menu extends AppCompatActivity {
             // Set up the input
             final EditText input = new EditText(this);
             // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
-            input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            input.setInputType(InputType.TYPE_CLASS_NUMBER);
             myAlert.setView(input);
             myAlert.setMessage("Choose board size")
                     .setPositiveButton("OK",new DialogInterface.OnClickListener(){
