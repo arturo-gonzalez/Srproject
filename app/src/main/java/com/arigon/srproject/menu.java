@@ -65,5 +65,14 @@ public class menu extends AppCompatActivity {
 
 
         }
+
+        //go to the single player game when button is clicked
+        if(v.getId() == R.id.ai)
+        {
+
+            Intent i = new Intent(menu.this, vscomputer.class);
+            startActivity(i);
+
+        }
     }
 }
