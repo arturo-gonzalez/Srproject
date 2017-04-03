@@ -81,7 +81,8 @@ public class TwoPlayerVar2 extends AppCompatActivity {
                 b.setLayoutParams(bparams);
                 b.row = i;
                 b.column = j;
-                if ((wsize * i + j) % 2 == 0) {
+                if ((wsize%2 == 1) && (wsize * i + j) % 2 == 0
+                        || (wsize%2 == 0)&&(wsize*i + j + i%2) % 2 == 0) {
                     b.setBackgroundColor(ContextCompat.getColor(this, R.color.light));
                 } else {
                     b.setBackgroundColor(ContextCompat.getColor(this, R.color.dark));

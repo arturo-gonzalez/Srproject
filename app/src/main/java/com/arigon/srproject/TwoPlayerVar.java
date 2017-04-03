@@ -17,8 +17,8 @@ import android.widget.TableRow;
 public class TwoPlayerVar extends AppCompatActivity {
 
     //board lengths, they don't need to be static
-    public static int lsize = 9;
-    public static int wsize = 9;
+    public static int lsize = 8;
+    public static int wsize = 8;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class TwoPlayerVar extends AppCompatActivity {
             for (int j = 0; j < wsize; j++) {
                 SquareButton b = new SquareButton(this);
                 b.setLayoutParams(bparams);
-                if ((wsize * i + j) % 2 == 0) {
+                if (((wsize * i + j) % 2 == 0) ) {
                     b.setBackgroundColor(ContextCompat.getColor(this, R.color.light));
                 } else {
                     b.setBackgroundColor(ContextCompat.getColor(this, R.color.dark));
