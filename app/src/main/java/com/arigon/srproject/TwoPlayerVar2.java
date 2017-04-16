@@ -13,6 +13,9 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static com.arigon.srproject.R.layout.twoplayervs;
 
 
@@ -98,7 +101,7 @@ public class TwoPlayerVar2 extends AppCompatActivity {
         TableLayout numberboard = (TableLayout) findViewById(R.id.numberboard);
         int numberRange = lsize*wsize/2;
         int rowRange = (int) Math.ceil(numberRange/4);
-        Button[] numberButtons = new Button[numberRange];
+        final Button[] numberButtons = new Button[numberRange];
         for(int i = 0; i < 4; i++){
             TableRow numrow = new TableRow(this);
 
@@ -112,6 +115,11 @@ public class TwoPlayerVar2 extends AppCompatActivity {
             numrow.setWeightSum(rowRange);
             numberboard.addView(numrow, TableLayout.LayoutParams.MATCH_PARENT, TableLayout.LayoutParams.WRAP_CONTENT);
         }
+
+        //create a list of numbers to check for avaialbe numbers
+        final List<Button> availableButtons  = Arrays.asList(numberButtons);
+
+
 
         //setting up click listeners and text for the gameboard
         for(int i = 0; i < boardButtons.length; i++) {
@@ -130,7 +138,7 @@ public class TwoPlayerVar2 extends AppCompatActivity {
                                 currButton.setEnabled(false);
                                 changeColor(button);
                                 alert.setText("");
-                                checkForWin(turn, number, boardButtons);
+                                checkForWin(turn, number, boardButtons, numberButtons, availableButtons);
                                 if(turn ==1) {
                                     turn = 2;
                                 }
@@ -210,11 +218,13 @@ public class TwoPlayerVar2 extends AppCompatActivity {
     //check if board is full
     //check if one player has no moves left
     ////////////////////////////////////////////////////////////////
-    public void checkForWin(int turn, int number, SquareButton[][] boardButtons)
+    public void checkForWin(int turn, int number, SquareButton[][] boardButtons, Button[] numberButtons,  List<Button> availableButtons)
     {
+        checkAvailableNumbers(numberButtons,availableButtons);
         lsize=number;
         wsize=number;
         boolean full = true;
+        boolean valid = true;
         String message = "";
         if(turn==1)
         {
@@ -238,8 +248,10 @@ public class TwoPlayerVar2 extends AppCompatActivity {
         }
 
 
+
+
         //if there are no available moves it means the game is over, show a dialog box
-        if(full)//todo:check if there are available moves
+        if(c.checkAvailable(lsize, wsize, boardButtons, availableButtons))//todo:check if there are available moves
         {
 
             AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
@@ -253,7 +265,6 @@ public class TwoPlayerVar2 extends AppCompatActivity {
                             startActivity(i);
                         }
                     })
-                    //.setTitle("You Win!")
                     .create();
             myAlert.show();
 
@@ -263,6 +274,20 @@ public class TwoPlayerVar2 extends AppCompatActivity {
         }
 
     }
+
+    //cretes a list of available buttons (buttons that are still enabled)
+    private void checkAvailableNumbers(Button[] numberButtons, List<Button> availableButtons)
+    {
+        //availableButtons.clear();//clear the list
+        for(int i = 0; i<numberButtons.length;i++)
+        {
+            if(numberButtons[i].isEnabled())
+            {
+                //availableButtons.add(numberButtons[i]);//add available numbers to the list
+            }
+        }
+    }
+
 
 
 }

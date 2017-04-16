@@ -19,6 +19,7 @@ public class minimax {
 
     }
 
+
     int minValue(State state, int depth)
     {
         if(depth == 0)
