@@ -14,6 +14,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 import static com.arigon.srproject.R.layout.twoplayervs;
@@ -117,7 +118,8 @@ public class TwoPlayerVar2 extends AppCompatActivity {
         }
 
         //create a list of numbers to check for avaialbe numbers
-        final List<Button> availableButtons  = Arrays.asList(numberButtons);
+        final List<Button> availableButtons = new LinkedList<>(Arrays.asList(numberButtons));
+        //final List<Button> availableButtons  = Arrays.asList(numberButtons);
 
 
 
@@ -220,7 +222,7 @@ public class TwoPlayerVar2 extends AppCompatActivity {
     ////////////////////////////////////////////////////////////////
     public void checkForWin(int turn, int number, SquareButton[][] boardButtons, Button[] numberButtons,  List<Button> availableButtons)
     {
-        checkAvailableNumbers(numberButtons,availableButtons);
+        List<Button> avButton = checkAvailableNumbers(numberButtons,availableButtons);
         lsize=number;
         wsize=number;
         boolean full = true;
@@ -251,7 +253,7 @@ public class TwoPlayerVar2 extends AppCompatActivity {
 
 
         //if there are no available moves it means the game is over, show a dialog box
-        if(c.checkAvailable(lsize, wsize, boardButtons, availableButtons))//todo:check if there are available moves
+        if(c.checkAvailable(lsize, wsize, boardButtons, avButton))//todo:check if there are available moves
         {
 
             AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
@@ -276,16 +278,17 @@ public class TwoPlayerVar2 extends AppCompatActivity {
     }
 
     //cretes a list of available buttons (buttons that are still enabled)
-    private void checkAvailableNumbers(Button[] numberButtons, List<Button> availableButtons)
+    List<Button> checkAvailableNumbers(Button[] numberButtons, List<Button> availableButtons)
     {
-        //availableButtons.clear();//clear the list
+        availableButtons.clear();//clear the list
         for(int i = 0; i<numberButtons.length;i++)
         {
             if(numberButtons[i].isEnabled())
             {
-                //availableButtons.add(numberButtons[i]);//add available numbers to the list
+                availableButtons.add(numberButtons[i]);//add available numbers to the list
             }
         }
+        return availableButtons;
     }
 
 
