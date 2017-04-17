@@ -97,11 +97,9 @@ public class check2{
 
     public Boolean checkAvailable2(SquareButton button,SquareButton[][] boardButtons, List<Button> availableButtons)
     {
-        boolean result;
         for(int k = 0; k<availableButtons.size();k++)
         {
-            result = checkIfValid(button, boardButtons, availableButtons.get(k).getText().toString());
-            if(result==true)
+            if(checkIfValid(button, boardButtons, availableButtons.get(k).getText().toString()))
                 return true;
         }
         return false;

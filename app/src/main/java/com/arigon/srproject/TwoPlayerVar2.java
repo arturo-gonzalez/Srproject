@@ -223,7 +223,7 @@ public class TwoPlayerVar2 extends AppCompatActivity {
     ////////////////////////////////////////////////////////////////
     public void checkForWin(SquareButton button, int turn, int number, SquareButton[][] boardButtons, Button[] numberButtons,  List<Button> availableButtons)
     {
-        List<Button> avButton = checkAvailableNumbers(numberButtons,availableButtons);
+        checkAvailableNumbers(numberButtons,availableButtons);
         lsize=number;
         wsize=number;
         boolean full = true;
@@ -251,7 +251,7 @@ public class TwoPlayerVar2 extends AppCompatActivity {
         }
 
         //if there are no available moves it means the game is over, show a dialog box and exit
-        if(!c.checkAvailable2(button, boardButtons, avButton))
+        if(!c.checkAvailable2(button, boardButtons, availableButtons))
         {
 
             AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
@@ -267,9 +267,6 @@ public class TwoPlayerVar2 extends AppCompatActivity {
                     })
                     .create();
             myAlert.show();
-
-            //save score
-            //scoreList.add(timer);
 
         }
 
