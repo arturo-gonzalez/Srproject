@@ -100,13 +100,13 @@ public class TwoPlayerVar2 extends AppCompatActivity {
 
         //preparation of the number board
         TableLayout numberboard = (TableLayout) findViewById(R.id.numberboard);
-        int numberRange = lsize*wsize/2;
-        int rowRange = (int) Math.ceil(numberRange/4);
+        int numberRange = lsize*wsize/2 + 1;
+        int rowRange = (int) Math.ceil((double)numberRange/4.0);
         final Button[] numberButtons = new Button[numberRange];
         for(int i = 0; i < 4; i++){
             TableRow numrow = new TableRow(this);
 
-            for(int j = 0; j < rowRange; j++){
+            for(int j = 0; j < rowRange && rowRange*i + j < numberRange; j++){
                 Button b = new Button(this);
                 b.setLayoutParams(bparams);
                 b.setBackgroundColor(ContextCompat.getColor(this, R.color.grey));
