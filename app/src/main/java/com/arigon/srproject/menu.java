@@ -34,8 +34,26 @@ public class menu extends AppCompatActivity {
         if(v.getId() == R.id.single)
         {
 
-            Intent i = new Intent(menu.this, singleplayer2.class);
-            startActivity(i);
+            AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
+            // Set up the input
+            final EditText input = new EditText(this);
+            // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+            input.setInputType(InputType.TYPE_CLASS_NUMBER);
+            myAlert.setView(input);
+            myAlert.setMessage("Choose board size")
+                    .setPositiveButton("OK",new DialogInterface.OnClickListener(){
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        {
+                            m_Text = Integer.valueOf(input.getText().toString());
+                            dialog.dismiss();
+                            Intent i = new Intent(menu.this, singleplayer2.class);
+                            i.putExtra("num", m_Text);
+                            startActivity(i);
+                        }
+                    })
+                    .create();
+            myAlert.show();
 
         }
 
@@ -71,8 +89,26 @@ public class menu extends AppCompatActivity {
         if(v.getId() == R.id.ai)
         {
 
-            Intent i = new Intent(menu.this, vscomputer.class);
-            startActivity(i);
+            AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
+            // Set up the input
+            final EditText input = new EditText(this);
+            // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+            input.setInputType(InputType.TYPE_CLASS_NUMBER);
+            myAlert.setView(input);
+            myAlert.setMessage("Choose board size")
+                    .setPositiveButton("OK",new DialogInterface.OnClickListener(){
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        {
+                            m_Text = Integer.valueOf(input.getText().toString());
+                            dialog.dismiss();
+                            Intent i = new Intent(menu.this, vscomputer.class);
+                            i.putExtra("num", m_Text);
+                            startActivity(i);
+                        }
+                    })
+                    .create();
+            myAlert.show();
 
         }
     }

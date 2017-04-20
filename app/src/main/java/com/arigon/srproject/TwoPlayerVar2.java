@@ -51,6 +51,8 @@ public class TwoPlayerVar2 extends AppCompatActivity {
         alert.setText(number.toString());
         lsize=number;
         wsize=number;
+
+
         //preparation of the checkerboard
         final SquareButton[][] boardButtons = new SquareButton[lsize][wsize];
 

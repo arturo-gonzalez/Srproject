@@ -48,53 +48,7 @@ public class check2{
         return true;
     }
 
-    //for each button check if one of the available numberes can be placed on it
-    public Boolean checkAvailable(int lsize, int wsize,SquareButton[][] boardButtons, List<Button> availableButtons) {
-        for(int i = 0;i<lsize;i++)
-        {
-            for(int j = 0; j<wsize;j++)
-            {
-                int row = i;
-                int column = j;
-
-                for(int k = 0; k<availableButtons.size();k++)
-                {
-                    String value = availableButtons.get(k).getText().toString();
-                    //check above
-                    if(row - 2 >= 0 && boardButtons[row - 2][column].getText().toString().length() > 0) {
-                        if(boardButtons[row - 1][column].getText() == "<" && Integer.parseInt(boardButtons[row-2][column].getText().toString()) >= Integer.parseInt(value)
-                                || boardButtons[row - 1][column].getText() == ">" && Integer.parseInt(boardButtons[row-2][column].getText().toString()) <= Integer.parseInt(value)) {
-                            return false;
-                        }
-                    }
-                    //check to the left
-                    if(column - 2 >= 0 && boardButtons[row][column - 2].getText().toString().length() > 0){
-                        if(boardButtons[row][column - 1].getText() == "<" && Integer.parseInt(boardButtons[row][column - 2].getText().toString()) >= Integer.parseInt(value)
-                                || boardButtons[row][column - 1].getText() == ">" && Integer.parseInt(boardButtons[row][column - 2].getText().toString()) <= Integer.parseInt(value)) {
-                            return false;
-                        }
-                    }
-                    //check below
-                    if(row + 2 < boardButtons.length && boardButtons[row + 2][column].getText().toString().length() > 0){
-                        if(boardButtons[row + 1][column].getText() == "<" && Integer.parseInt(boardButtons[row + 2][column].getText().toString()) <= Integer.parseInt(value)
-                                || boardButtons[row + 1][column].getText() == ">" && Integer.parseInt(boardButtons[row + 2][column].getText().toString()) >= Integer.parseInt(value)) {
-                            return false;
-                        }
-                    }
-                    //check to the right
-                    if(column + 2 < boardButtons[row].length && boardButtons[row][column + 2].getText().toString().length() > 0){
-                        if(boardButtons[row][column + 1].getText() == "<" && Integer.parseInt(boardButtons[row][column + 2].getText().toString()) <= Integer.parseInt(value)
-                                || boardButtons[row][column + 1].getText() == ">" && Integer.parseInt(boardButtons[row][column + 2].getText().toString()) >= Integer.parseInt(value)) {
-                            return false;
-                        }
-                    }
-                }
-                return true;
-            }
-        }
-        return true;
-    }
-
+    //for each available number check if it can be placed on the board
     public Boolean checkAvailable2(SquareButton button,SquareButton[][] boardButtons, List<Button> availableButtons)
     {
         for(int k = 0; k<availableButtons.size();k++)

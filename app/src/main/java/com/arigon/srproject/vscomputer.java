@@ -36,8 +36,7 @@ public class vscomputer extends AppCompatActivity {
 
     public static int lsize = 7;
     public static  int wsize = 7;
-    //preparation of the checkerboard
-    SquareButton[][] boardButtons = new SquareButton[lsize][wsize];
+
     boolean clicked = false;
     String value;
     Button currButton;
@@ -53,6 +52,16 @@ public class vscomputer extends AppCompatActivity {
         setContentView(twoplayervs);
         final TextView alert=(TextView) findViewById(R.id.textView1);//textview that shows message
 
+        //value from menu
+        Bundle bundle=getIntent().getExtras();
+        final Integer number=bundle.getInt("num");
+        alert.setText(number.toString());
+        lsize=number;
+        wsize=number;
+
+
+        //preparation of the checkerboard
+        final SquareButton[][] boardButtons = new SquareButton[lsize][wsize];
 
         //exit button
         Button exit = (Button) findViewById(R.id.exitButton);
@@ -99,13 +108,13 @@ public class vscomputer extends AppCompatActivity {
 
         //preparation of the number board
         TableLayout numberboard = (TableLayout) findViewById(R.id.numberboard);
-        int numberRange = lsize*wsize/2;
-        int rowRange = (int) Math.ceil(numberRange/4);
-        Button[] numberButtons = new Button[numberRange];
+        int numberRange = lsize*wsize/2 + 1;
+        int rowRange = (int) Math.ceil((double)numberRange/4.0);
+        final Button[] numberButtons = new Button[numberRange];
         for(int i = 0; i < 4; i++){
             TableRow numrow = new TableRow(this);
 
-            for(int j = 0; j < rowRange; j++){
+            for(int j = 0; j < rowRange && rowRange*i + j < numberRange; j++){
                 Button b = new Button(this);
                 b.setLayoutParams(bparams);
                 b.setBackgroundColor(ContextCompat.getColor(this, R.color.grey));
@@ -150,7 +159,7 @@ public class vscomputer extends AppCompatActivity {
         for(int i = 0; i < numberButtons.length; i++)
         {
             Button b = numberButtons[i];
-            b.setText(String.valueOf(i));
+            b.setText(String.valueOf(i+1));
 
             b.setOnClickListener(new View.OnClickListener(){
 

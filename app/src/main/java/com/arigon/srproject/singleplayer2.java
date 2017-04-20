@@ -28,8 +28,6 @@ public class singleplayer2 extends AppCompatActivity {
 
     public static int lsize = 7;
     public static  int wsize = 7;
-    //preparation of the checkerboard
-    SquareButton[][] boardButtons = new SquareButton[lsize][wsize];
     boolean clicked = false;
     String value;
     Button currButton;
@@ -53,7 +51,6 @@ public class singleplayer2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(twoplayervs);
-        //final TextView alert=(TextView) findViewById(R.id.textView1);//textview that shows message
 
         ///////////////////////////////////////////
         //timer
@@ -61,6 +58,15 @@ public class singleplayer2 extends AppCompatActivity {
         timerValue = (TextView) findViewById(R.id.textView1);
         startTime = SystemClock.uptimeMillis();
         customHandler.postDelayed(updateTimerThread, 0);
+
+        //value from menu
+        Bundle bundle=getIntent().getExtras();
+        final Integer number=bundle.getInt("num");
+        lsize=number;
+        wsize=number;
+
+        //preparation of the checkerboard
+        final SquareButton[][] boardButtons = new SquareButton[lsize][wsize];
 
 
         //exit button
@@ -108,13 +114,13 @@ public class singleplayer2 extends AppCompatActivity {
 
         //preparation of the number board
         TableLayout numberboard = (TableLayout) findViewById(R.id.numberboard);
-        int numberRange = lsize*wsize/2;
-        int rowRange = (int) Math.ceil(numberRange/4);
+        int numberRange = lsize*wsize/2 + 1;
+        int rowRange = (int) Math.ceil((double)numberRange/4.0);
         final Button[] numberButtons = new Button[numberRange];
         for(int i = 0; i < 4; i++){
             TableRow numrow = new TableRow(this);
 
-            for(int j = 0; j < rowRange; j++){
+            for(int j = 0; j < rowRange && rowRange*i + j < numberRange; j++){
                 Button b = new Button(this);
                 b.setLayoutParams(bparams);
                 b.setBackgroundColor(ContextCompat.getColor(this, R.color.grey));
@@ -137,7 +143,7 @@ public class singleplayer2 extends AppCompatActivity {
                         public void onClick(View v) {
                             SquareButton button = (SquareButton) v;
                             if (clicked  ) {
-                                choice(numberButtons, button);
+                                choice(numberButtons, button, boardButtons);
                             }
 //                            if (clicked&&button.getText().length() == 0&&c.checkIfValid(button, boardButtons, value)) {
 //                                button.setText(value);
@@ -153,14 +159,14 @@ public class singleplayer2 extends AppCompatActivity {
         }
 
         //add numbers
-        addNumbers();
-        removeNumbers();
+        addNumbers(boardButtons);
+        removeNumbers(boardButtons);
 
         //setting up click listeners and text for the numberboard
         for(int i = 0; i < numberButtons.length; i++)
         {
             Button b = numberButtons[i];
-            b.setText(String.valueOf(i));
+            b.setText(String.valueOf(i+1));
             onBoard(b);
             b.setOnClickListener(new View.OnClickListener(){
 
@@ -187,7 +193,7 @@ public class singleplayer2 extends AppCompatActivity {
 
 
     //add numbers to board
-    public void addNumbers()
+    public void addNumbers(SquareButton[][] boardButtons)
     {
 
         //boolean variable used in loop to test if a board is acceptable
@@ -270,7 +276,7 @@ public class singleplayer2 extends AppCompatActivity {
     }
 
     //remove numbers
-    public void removeNumbers()
+    public void removeNumbers(SquareButton[][] boardButtons)
     {
         //////////////////////////////////////////////////
         //remove some numbers from board
@@ -282,7 +288,7 @@ public class singleplayer2 extends AppCompatActivity {
                 if((i % 2 == 0 && j%2==0)||(i % 2 == 1 && j%2==1))//check if it is a light button
                 {
                     //add to array of buttons
-                    removedButtons[i]=boardButtons[i];//set selected button to removedButtons array
+                    removedButtons[i][j]=boardButtons[i][j];//set selected button to removedButtons array
                     //delete text from some buttons
                     int x = (int) (Math.random() * 2);
                     if(x == 1)
@@ -335,7 +341,7 @@ public class singleplayer2 extends AppCompatActivity {
         }
     }
 
-    public void choice(Button[] numberButtons, Button btn)
+    public void choice(Button[] numberButtons, Button btn, SquareButton[][] boardButtons)
     {
         //if button has a number re-enable button with that number
         for(int i = 0; i<numberButtons.length;i++)
@@ -349,14 +355,14 @@ public class singleplayer2 extends AppCompatActivity {
 
         clicked = false;
 
-        win(timerValue.getText());
+        win(timerValue.getText(), boardButtons);
     }
 
     //////////////////////////////////////////
     // check if a player has won
     //display winning message, and time it took to finish
     ////////////////////////////////////////
-    public void win(CharSequence timer)
+    public void win(CharSequence timer, SquareButton[][] boardButtons)
     {
         boolean full = true;
         int num = 0;
