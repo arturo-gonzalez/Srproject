@@ -1,5 +1,7 @@
 package com.arigon.srproject;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,31 +13,21 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
 import static com.arigon.srproject.R.layout.twoplayervs;
+
 
 /**
  * Created by art on 3/19/2017.
  */
 
-class State//todo:state class
-{
-    Button[] state;
-    int depth;
-    public int value;
-
-    public State(Button[] state1, int depth1)
-    {
-        state = state1;
-        depth = depth1;
-    }
-
-}
-
-
 public class vscomputer extends AppCompatActivity {
 
-    public static int lsize = 7;
-    public static  int wsize = 7;
+    public int lsize = 7;
+    public  int wsize = 7;
 
     boolean clicked = false;
     String value;
@@ -43,6 +35,7 @@ public class vscomputer extends AppCompatActivity {
     check2 c = new check2();
     //players turn
     int turn = 1;
+
 
 
 
@@ -94,7 +87,8 @@ public class vscomputer extends AppCompatActivity {
                 b.setLayoutParams(bparams);
                 b.row = i;
                 b.column = j;
-                if ((wsize * i + j) % 2 == 0) {
+                if ((wsize%2 == 1) && (wsize * i + j) % 2 == 0
+                        || (wsize%2 == 0)&&(wsize*i + j + i%2) % 2 == 0) {
                     b.setBackgroundColor(ContextCompat.getColor(this, R.color.light));
                 } else {
                     b.setBackgroundColor(ContextCompat.getColor(this, R.color.dark));
@@ -125,6 +119,12 @@ public class vscomputer extends AppCompatActivity {
             numberboard.addView(numrow, TableLayout.LayoutParams.MATCH_PARENT, TableLayout.LayoutParams.WRAP_CONTENT);
         }
 
+        //create a list of numbers to check for avaialbe numbers
+        final List<Button> availableButtons = new LinkedList<>(Arrays.asList(numberButtons));
+        //final List<Button> availableButtons  = Arrays.asList(numberButtons);
+
+
+
         //setting up click listeners and text for the gameboard
         for(int i = 0; i < boardButtons.length; i++) {
             for (int j = 0; j < boardButtons[i].length; j++) {
@@ -141,7 +141,16 @@ public class vscomputer extends AppCompatActivity {
                                 clicked = false;
                                 currButton.setEnabled(false);
                                 changeColor(button);
-                                alert.setText("");
+
+                                checkForWin(button, turn, number, boardButtons, numberButtons, availableButtons);
+                                alert.setText(Integer.toString(availableButtons.size()));
+                                if(turn ==1) {
+                                    turn = 2;
+                                }
+                                else if(turn==2)
+                                {
+                                    turn  = 1;
+                                }
                             }
                             else
                                 alert.setText("Not a valid move");
@@ -202,12 +211,10 @@ public class vscomputer extends AppCompatActivity {
     {
         if(turn ==1) {
             btn.setBackgroundColor(Color.RED);
-            turn = 2;
         }
         else if(turn==2)
         {
             btn.setBackgroundColor(Color.BLUE);
-            turn  = 1;
         }
     }
 
@@ -216,12 +223,92 @@ public class vscomputer extends AppCompatActivity {
     //check if board is full
     //check if one player has no moves left
     ////////////////////////////////////////////////////////////////
-    void checkForWin()
+    public void checkForWin(SquareButton button, int turn, int number, SquareButton[][] boardButtons, Button[] numberButtons,  List<Button> availableButtons)
     {
+        checkAvailableNumbers(numberButtons,availableButtons);
+        lsize=number;
+        wsize=number;
+        boolean full = true;
+        boolean valid = true;
+        String message = "";
+        if(turn==1)
+        {
+            message = "Red Wins";
+        }
+        else if (turn == 2)
+        {
+            message = "Blue Wins";
+        }
+
+        //check if the board is full
+        for(int i=0;i<lsize;i++)
+        {
+            for(int j = 0; j<wsize;j++)
+            {
+                if(boardButtons[i][j].getText()=="")
+                {
+                    full = false;
+                }
+            }
+        }
+
+        //if there are no available moves it means the game is over, show a dialog box and exit
+        if(!c.checkAvailable2(button, boardButtons, availableButtons))
+        {
+
+            AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
+            myAlert.setMessage(message)
+                    .setPositiveButton("OK",new DialogInterface.OnClickListener(){
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        {
+                            dialog.dismiss();
+                            Intent i = new Intent(vscomputer.this, menu.class);
+                            startActivity(i);
+                        }
+                    })
+                    .create();
+            myAlert.show();
+
+        }
 
     }
 
+    //cretes a list of available buttons (buttons that are still enabled)
+    List<Button> checkAvailableNumbers(Button[] numberButtons, List<Button> availableButtons)
+    {
+        availableButtons.clear();//clear the list
+        for(int i = 0; i<numberButtons.length;i++)
+        {
+            if(numberButtons[i].isEnabled())
+            {
+                availableButtons.add(numberButtons[i]);//add available numbers to the list
+            }
+        }
+        return availableButtons;
+    }
 
+    //test
+    public void naiveAI(SquareButton button, int number, SquareButton[][] boardButtons, Button[] numberButtons,  List<Button> availableButtons)
+    {
+        int availablespots = 0;
+        for(int i = 0; i<number;i++)
+        {
+            for(int j = 0; j<number;j++)
+            {
+                for(int k = 0;k<availableButtons.size();k++)
+                {
+                    if(c.checkIfValid(boardButtons[i][j], boardButtons, availableButtons.get(k).getText().toString()))
+                    {
+                        availablespots++;
+
+                    }
+                }
+            }
+        }
+
+
+    }
 
 
 }
