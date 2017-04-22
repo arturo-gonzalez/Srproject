@@ -90,8 +90,10 @@ public class TwoPlayerVar2 extends AppCompatActivity {
                 if ((wsize%2 == 1) && (wsize * i + j) % 2 == 0
                         || (wsize%2 == 0)&&(wsize*i + j + i%2) % 2 == 0) {
                     b.setBackgroundColor(ContextCompat.getColor(this, R.color.light));
+                    b.setTextSize(22);
                 } else {
                     b.setBackgroundColor(ContextCompat.getColor(this, R.color.dark));
+                    b.setTextSize(22);
                 }
                 row.addView(b);
                 boardButtons[i][j] = b;

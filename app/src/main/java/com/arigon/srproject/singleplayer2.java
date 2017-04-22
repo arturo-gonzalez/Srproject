@@ -102,8 +102,10 @@ public class singleplayer2 extends AppCompatActivity {
                 b.column = j;
                 if ((wsize * i + j) % 2 == 0) {
                     b.setBackgroundColor(ContextCompat.getColor(this, R.color.light));
+                    b.setTextSize(22);
                 } else {
                     b.setBackgroundColor(ContextCompat.getColor(this, R.color.dark));
+                    b.setTextSize(22);
                 }
                 row.addView(b);
                 boardButtons[i][j] = b;
@@ -333,7 +335,7 @@ public class singleplayer2 extends AppCompatActivity {
             {
                 if(removedButtons[i][j]!=null &&removedButtons[i][j].getText()== btn.getText())
                 {
-                    btn.setBackgroundColor(Color.WHITE);
+                    btn.setBackgroundColor(0xFFA9A9A9);
                     btn.setEnabled(false);
                 }
             }

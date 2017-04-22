@@ -92,8 +92,10 @@ public class vscomputer extends AppCompatActivity {
                 if ((wsize%2 == 1) && (wsize * i + j) % 2 == 0
                         || (wsize%2 == 0)&&(wsize*i + j + i%2) % 2 == 0) {
                     b.setBackgroundColor(ContextCompat.getColor(this, R.color.light));
+                    b.setTextSize(22);
                 } else {
                     b.setBackgroundColor(ContextCompat.getColor(this, R.color.dark));
+                    b.setTextSize(22);
                 }
                 row.addView(b);
                 boardButtons[i][j] = b;
@@ -147,6 +149,8 @@ public class vscomputer extends AppCompatActivity {
                                 checkForWin(button, turn, number, boardButtons, numberButtons, availableButtons);
                                 alert.setText(Integer.toString(availableButtons.size()));
 
+
+                                ///ai
                                 naiveAI(number, boardButtons, availableButtons);
                             }
                             else
@@ -310,6 +314,7 @@ public class vscomputer extends AppCompatActivity {
                         }
                         else if(availablespots%2==1)
                         {
+                            availableButtons.remove(k);
                             broke=true;
                             break;
                         }
