@@ -210,11 +210,11 @@ public class TwoPlayerVar2 extends AppCompatActivity {
     void changeColor(Button btn)
     {
         if(turn ==1) {
-            btn.setBackgroundColor(Color.RED);
+            btn.setBackgroundColor(0xffff6347);
         }
         else if(turn==2)
         {
-            btn.setBackgroundColor(Color.BLUE);
+            btn.setBackgroundColor(0xff1e90ff);
         }
     }
 

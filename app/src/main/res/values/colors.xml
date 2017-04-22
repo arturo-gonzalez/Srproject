@@ -9,4 +9,6 @@
     <color name="background">#3e200f</color>
     <color name="bg">#ece1dd</color>
     <color name="grey">#808080</color>
+    <color name="red">#e73333</color>
+    <color name="blue">#3b4ccc</color>
 </resources>

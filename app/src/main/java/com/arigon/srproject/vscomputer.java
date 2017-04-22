@@ -53,6 +53,8 @@ public class vscomputer extends AppCompatActivity {
         wsize=number;
 
 
+
+
         //preparation of the checkerboard
         final SquareButton[][] boardButtons = new SquareButton[lsize][wsize];
 
@@ -144,13 +146,8 @@ public class vscomputer extends AppCompatActivity {
 
                                 checkForWin(button, turn, number, boardButtons, numberButtons, availableButtons);
                                 alert.setText(Integer.toString(availableButtons.size()));
-                                if(turn ==1) {
-                                    turn = 2;
-                                }
-                                else if(turn==2)
-                                {
-                                    turn  = 1;
-                                }
+
+                                naiveAI(number, boardButtons, availableButtons);
                             }
                             else
                                 alert.setText("Not a valid move");
@@ -163,6 +160,7 @@ public class vscomputer extends AppCompatActivity {
 
             }
         }
+
 
         //setting up click listeners and text for the numberboard
         for(int i = 0; i < numberButtons.length; i++)
@@ -210,11 +208,11 @@ public class vscomputer extends AppCompatActivity {
     void changeColor(Button btn)
     {
         if(turn ==1) {
-            btn.setBackgroundColor(Color.RED);
+            btn.setBackgroundColor(0xffff6347);
         }
         else if(turn==2)
         {
-            btn.setBackgroundColor(Color.BLUE);
+            btn.setBackgroundColor(0xff1e90ff);
         }
     }
 
@@ -289,26 +287,43 @@ public class vscomputer extends AppCompatActivity {
     }
 
     //test
-    public void naiveAI(SquareButton button, int number, SquareButton[][] boardButtons, Button[] numberButtons,  List<Button> availableButtons)
+    public void naiveAI(int number, SquareButton[][] boardButtons,  List<Button> availableButtons)
     {
         int availablespots = 0;
+        boolean broke = false;
         for(int i = 0; i<number;i++)
         {
             for(int j = 0; j<number;j++)
             {
+                availablespots++;
                 for(int k = 0;k<availableButtons.size();k++)
                 {
-                    if(c.checkIfValid(boardButtons[i][j], boardButtons, availableButtons.get(k).getText().toString()))
+                    if(c.checkIfValid(boardButtons[i][j], boardButtons, availableButtons.get(k).getText().toString())&&((i % 2 == 0 && j%2==0)||(i % 2 == 1 && j%2==1)))
                     {
-                        availablespots++;
+                        boardButtons[i][j].setText(availableButtons.get(k).getText());
+                        availablespots--;
+                        if(availablespots%2 == 0)
+                        {
+                            boardButtons[i][j].setText("");
+                            availablespots++;
 
+                        }
+                        else if(availablespots%2==1)
+                        {
+                            broke=true;
+                            break;
+                        }
                     }
                 }
+                if (broke)
+                    break;
             }
+            if (broke)
+                break;
         }
 
-
     }
+
 
 
 }

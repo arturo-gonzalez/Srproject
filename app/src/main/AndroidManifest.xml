@@ -18,10 +18,6 @@
         </activity>
         <activity android:name=".MainActivity">
         </activity>
-        <activity android:name=".twoplayer">
-        </activity>
-        <activity android:name=".singleplayer">
-        </activity>
         <activity android:name=".TwoPlayerVar">
         </activity>
         <activity android:name=".TwoPlayerVar2">

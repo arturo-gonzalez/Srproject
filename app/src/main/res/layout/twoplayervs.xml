@@ -46,10 +46,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/LinearLayout1"
-        android:textStyle="bold"
-        android:textColor="?attr/colorControlNormal"
-        android:textSize="24dp"
         android:padding="5dp"
+        android:textColor="?attr/colorControlNormal"
+        android:textSize="28dp"
+        android:textStyle="bold"
         />
 
     <TableLayout
@@ -57,9 +57,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/gameboard"
-        android:textStyle="bold"
+        android:padding="5dp"
         android:textColor="?attr/colorControlNormal"
         android:textSize="24dp"
-        android:padding="5dp"/>
+        android:textStyle="bold"/>
 
 </RelativeLayout>
