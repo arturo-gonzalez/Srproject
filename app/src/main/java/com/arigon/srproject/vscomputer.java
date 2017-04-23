@@ -145,13 +145,9 @@ public class vscomputer extends AppCompatActivity {
                                 clicked = false;
                                 currButton.setEnabled(false);
                                 changeColor(button);
-
                                 checkForWin(button, turn, number, boardButtons, numberButtons, availableButtons);
                                 alert.setText(Integer.toString(availableButtons.size()));
 
-
-                                ///ai
-                                naiveAI(number, boardButtons, availableButtons);
                             }
                             else
                                 alert.setText("Not a valid move");
@@ -213,10 +209,13 @@ public class vscomputer extends AppCompatActivity {
     {
         if(turn ==1) {
             btn.setBackgroundColor(0xffff6347);
+            turn = 2;
+
         }
         else if(turn==2)
         {
             btn.setBackgroundColor(0xff1e90ff);
+            turn = 1;
         }
     }
 
