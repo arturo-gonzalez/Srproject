@@ -5,9 +5,9 @@ package com.arigon.srproject;
  */
 
 public class BoardState {
-    public String[][] curboard;
+    public SquareButton[][] curboard;
 
-    BoardState(String[][] inboard)
+    BoardState(SquareButton[][] inboard)
     {
         curboard = inboard;
     }

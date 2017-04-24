@@ -12,6 +12,15 @@ import static java.lang.Math.min;
 
 public class minimax {
 
+    public void createTree(BoardState currboard)
+    {
+        //create a new BoardState type node
+        NaryTreeNode<BoardState> root = new NaryTreeNode<BoardState>(currboard);
+
+        // Create a tree, providing the root node
+        NaryTree<BoardState> tree = new NaryTree<>(root);
+    }
+
     ////////////////////////////////////////////////////////////////
     //AI//
     //////////////////////////////////////////////////////////////
