@@ -138,7 +138,7 @@ public class TwoPlayerVar2 extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             SquareButton button = (SquareButton) v;
-                            if (clicked&&button.getText().length() == 0&&c.checkIfValid(button, boardButtons, value)) {
+                            if (clicked&&button.getText().length() == 0 && c.checkIfValid(button, boardButtons, value)) {
                                 button.setText(value);
                                 clicked = false;
                                 currButton.setEnabled(false);
