@@ -51,7 +51,7 @@ public class check2{
     //for each available number check if it can be placed on the board
     public Boolean checkAvailable2(SquareButton button,SquareButton[][] boardButtons, List<Button> availableButtons)
     {
-        for(int k = 0; k<availableButtons.size();k++)
+        for(int k = 0; k < availableButtons.size();k++)
         {
             if(checkIfValid(button, boardButtons, availableButtons.get(k).getText().toString()))
                 return true;
