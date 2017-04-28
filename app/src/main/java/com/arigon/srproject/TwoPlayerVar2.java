@@ -144,7 +144,7 @@ public class TwoPlayerVar2 extends AppCompatActivity {
                                 currButton.setEnabled(false);
                                 changeColor(button);
 
-                                checkForWin(button, turn, number, boardButtons, numberButtons, availableButtons);
+                                checkForWin(turn, number, boardButtons, numberButtons, availableButtons);
                                 alert.setText(Integer.toString(availableButtons.size()));
                                 if(turn ==1) {
                                     turn = 2;
@@ -225,7 +225,7 @@ public class TwoPlayerVar2 extends AppCompatActivity {
     //check if board is full
     //check if one player has no moves left
     ////////////////////////////////////////////////////////////////
-    public void checkForWin(SquareButton button, int turn, int number, SquareButton[][] boardButtons, Button[] numberButtons,  List<Button> availableButtons)
+    public void checkForWin(int turn, int number, SquareButton[][] boardButtons, Button[] numberButtons,  List<Button> availableButtons)
     {
         checkAvailableNumbers(numberButtons,availableButtons);
         lsize=number;
@@ -253,9 +253,23 @@ public class TwoPlayerVar2 extends AppCompatActivity {
                 }
             }
         }
+        //check if a move is possible on any boardButton, set valid to false if so
+        for(int i = 0; i < boardButtons.length; i++)
+        {
+            for(int j = 0; j < boardButtons[i].length; j++) {
+                SquareButton b = boardButtons[i][j];
+                if(b.getText().toString() == "")
+                {
+                    if(c.checkAvailable2(b, boardButtons, availableButtons))
+                    {
+                        valid = false;
+                    }
+                }
 
-        //if there are no available moves it means the game is over, show a dialog box and exit
-        if(!c.checkAvailable2(button, boardButtons, availableButtons))
+            }
+
+        }
+        if(valid)
         {
 
             AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
