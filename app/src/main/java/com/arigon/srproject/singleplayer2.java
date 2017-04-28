@@ -18,6 +18,7 @@ import android.widget.TextView;
 import java.util.Arrays;
 import java.util.Collections;
 
+
 import static com.arigon.srproject.R.layout.twoplayervs;
 
 /**
@@ -67,6 +68,7 @@ public class singleplayer2 extends AppCompatActivity {
 
         //preparation of the checkerboard
         final SquareButton[][] boardButtons = new SquareButton[lsize][wsize];
+        final check2 c = new check2();
 
 
         //exit button
@@ -144,14 +146,15 @@ public class singleplayer2 extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             SquareButton button = (SquareButton) v;
-                            if (clicked  ) {
-                                choice(numberButtons, button, boardButtons);
+                            //if (clicked  ) {
+                           //     choice(numberButtons, button, boardButtons);
+                          //  }
+                           if (clicked && c.checkIfValid(button, boardButtons, value)) {
+                                //button.setText(value);
+                                //clicked = false;
+                                //currButton.setEnabled(false);
+                               choice(numberButtons, button, boardButtons);
                             }
-//                            if (clicked&&button.getText().length() == 0&&c.checkIfValid(button, boardButtons, value)) {
-//                                button.setText(value);
-//                                clicked = false;
-//                                currButton.setEnabled(false);
-//                            }
                         }
 
                     });
@@ -382,7 +385,7 @@ public class singleplayer2 extends AppCompatActivity {
             }
         }
 
-        //check if the numbers on the board match the computer generated numbers
+        /*check if the numbers on the board match the computer generated numbers
         for(int i=0;i<lsize;i++)
         {
             for(int j = 0;j<wsize;j++)
@@ -396,9 +399,9 @@ public class singleplayer2 extends AppCompatActivity {
                     k++;
                 }
             }
-        }
+        }*/
 
-        if(full&&num==25)
+        if(full)
         {
             timeSwapBuff += timeInMilliseconds;
             customHandler.removeCallbacks(updateTimerThread);
