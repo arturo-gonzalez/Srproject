@@ -149,7 +149,7 @@ public class singleplayer2 extends AppCompatActivity {
                             //if (clicked  ) {
                            //     choice(numberButtons, button, boardButtons);
                           //  }
-                           if (clicked && c.checkIfValid(button, boardButtons, value)) {
+                           if (clicked && c.checkIfValid(button, boardButtons, value) && isNumberRepeated(boardButtons, value)) {
                                 //button.setText(value);
                                 //clicked = false;
                                 //currButton.setEnabled(false);
@@ -177,7 +177,7 @@ public class singleplayer2 extends AppCompatActivity {
 
                 @Override
                 public void onClick(View v){
-                    if(clicked)
+                    if(clicked && isNumberRepeated(boardButtons, currButton.getText().toString() ) )
                     {
                         currButton.setBackgroundColor(Color.GRAY);
                     }
@@ -427,6 +427,23 @@ public class singleplayer2 extends AppCompatActivity {
 
         }
 
+    }
+
+    boolean isNumberRepeated(SquareButton[][] boardButtons, String value)
+    {
+        for(int i = 0; i<lsize; i++)
+        {
+            for(int j = 0; j<wsize; j++)
+            {
+                if(boardButtons[i][j].getText()==value)
+                {
+                    return false;
+
+                }
+            }
+        }
+
+        return true;
     }
 
 
