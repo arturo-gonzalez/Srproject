@@ -1,5 +1,8 @@
 package com.arigon.srproject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static java.lang.Math.max;
 import static java.lang.Math.min;
 
@@ -63,12 +66,18 @@ public class minimax {
     }
 
     //return each possible state reachable from a given state
-    BoardState[]  successors(BoardState state)//todo: reachable states from any state
+    List<BoardState>  successors(BoardState state)
     {
-        BoardState[] states = new BoardState[5];//5 is just a place holder, it should be the number of states
+        List<BoardState> list = new ArrayList<>();
+
+        //create a tree with all the successors from the given state
+        createTree(state);
+
+        //todo: get successors
 
 
-        return states;//return array of states
+        //return array of successors
+        return list;
     }
 
 }
