@@ -28,6 +28,14 @@
             android:layout_weight="1"
             android:onClick="click"
             android:text="@string/ai"/>
+        <Button
+            android:id="@+id/ai2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:onClick="click"
+            android:text="@string/ai2"/>
 
         <Button
             android:id="@+id/tpvar2"

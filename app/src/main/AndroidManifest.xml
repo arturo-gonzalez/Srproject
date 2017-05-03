@@ -26,6 +26,8 @@
         </activity>
         <activity android:name=".vscomputer">
         </activity>
+        <activity android:name=".vscomputerNaive">
+        </activity>
     </application>
 
 </manifest>

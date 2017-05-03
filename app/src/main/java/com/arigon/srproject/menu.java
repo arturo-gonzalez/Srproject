@@ -85,7 +85,7 @@ public class menu extends AppCompatActivity {
 
         }
 
-        //go to the single player game when button is clicked
+        //go to the ai game when button is clicked
         if(v.getId() == R.id.ai)
         {
 
@@ -103,6 +103,33 @@ public class menu extends AppCompatActivity {
                             m_Text = Integer.valueOf(input.getText().toString());
                             dialog.dismiss();
                             Intent i = new Intent(menu.this, vscomputer.class);
+                            i.putExtra("num", m_Text);
+                            startActivity(i);
+                        }
+                    })
+                    .create();
+            myAlert.show();
+
+        }
+
+        //go to the naive ai game when button is clicked
+        if(v.getId() == R.id.ai2)
+        {
+
+            AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
+            // Set up the input
+            final EditText input = new EditText(this);
+            // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+            input.setInputType(InputType.TYPE_CLASS_NUMBER);
+            myAlert.setView(input);
+            myAlert.setMessage("Choose board size")
+                    .setPositiveButton("OK",new DialogInterface.OnClickListener(){
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        {
+                            m_Text = Integer.valueOf(input.getText().toString());
+                            dialog.dismiss();
+                            Intent i = new Intent(menu.this, vscomputerNaive.class);
                             i.putExtra("num", m_Text);
                             startActivity(i);
                         }

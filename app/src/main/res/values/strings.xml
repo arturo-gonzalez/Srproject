@@ -6,6 +6,7 @@
     <string name="onezero">1>0</string>
     <string name="single">Single Player</string>
     <string name="ai">AI</string>
+    <string name="ai2">Naive AI</string>
     <string name="CP">CP</string>
     <string name="two">Two Players</string>
     <string name="tpvar">2PVar</string>

@@ -29,7 +29,6 @@ public class minimax {
     //////////////////////////////////////////////////////////////
     BoardState minimax(BoardState state, int depth)
     {
-        //todo:minimax
         return state;//should return the best move
 
     }
@@ -60,7 +59,6 @@ public class minimax {
         for(BoardState s : successors(state))
         {
             v = max(v, minValue(s,depth-1));
-
         }
         return v;
     }
@@ -74,7 +72,6 @@ public class minimax {
         createTree(state);
 
         //todo: get successors
-
 
         //return array of successors
         return list;

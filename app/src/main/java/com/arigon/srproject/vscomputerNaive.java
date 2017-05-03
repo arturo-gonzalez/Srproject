@@ -22,10 +22,11 @@ import static com.arigon.srproject.R.layout.twoplayervs;
 
 
 /**
- * Created by art on 3/15/2017.
+ * Created by art on 5/03/2017.
+ * This is a naive heuristic ai
  */
 
-public class vscomputer extends AppCompatActivity {
+public class vscomputerNaive extends AppCompatActivity {
 
     public int lsize = 7;
     public  int wsize = 7;
@@ -36,6 +37,7 @@ public class vscomputer extends AppCompatActivity {
     check2 c = new check2();
     //players turn
     int turn = 1;
+    boolean gameover= false;
 
 
 
@@ -66,7 +68,7 @@ public class vscomputer extends AppCompatActivity {
             {
                 if(v.getId() == R.id.exitButton)
                 {
-                    Intent i = new Intent(vscomputer.this, menu.class);
+                    Intent i = new Intent(vscomputerNaive.this, menu.class);
                     startActivity(i);
                 }
             }
@@ -147,13 +149,11 @@ public class vscomputer extends AppCompatActivity {
 
                                 checkForWin(turn, number, boardButtons, numberButtons, availableButtons);
                                 alert.setText(Integer.toString(availableButtons.size()));
-                                if(turn ==1) {
-                                    turn = 2;
-                                }
-                                else if(turn==2)
+                                if(gameover == false)
                                 {
-                                    turn  = 1;
+                                    naiveAI2(number, boardButtons, numberButtons);
                                 }
+
                             }
                             else
                                 alert.setText("Not a valid move");
@@ -212,13 +212,8 @@ public class vscomputer extends AppCompatActivity {
     //////////////////////////////////////////////////////////////////
     void changeColor(Button btn)
     {
-        if(turn ==1) {
-            btn.setBackgroundColor(0xffff6347);
-        }
-        else if(turn==2)
-        {
-            btn.setBackgroundColor(0xff1e90ff);
-        }
+        btn.setBackgroundColor(0xffff6347);
+        turn = 2;
     }
 
     ////////////////////////////////////////////////////////////////
@@ -280,12 +275,13 @@ public class vscomputer extends AppCompatActivity {
                         public void onClick(DialogInterface dialog, int which)
                         {
                             dialog.dismiss();
-                            Intent i = new Intent(vscomputer.this, menu.class);
+                            Intent i = new Intent(vscomputerNaive.this, menu.class);
                             startActivity(i);
                         }
                     })
                     .create();
             myAlert.show();
+            gameover = true;
 
         }
 
@@ -344,6 +340,32 @@ public class vscomputer extends AppCompatActivity {
 
     }
 
+    public void naiveAI2(int number, SquareButton[][] boardButtons, Button[] numberButtons)
+    {
+        //get random numbers
+        Random rand = new Random();
+
+        int  l = rand.nextInt(number) + 1;
+        int w = rand.nextInt(number) + 1;
+
+        int num = (number*number/2)+1;
+        int n = rand.nextInt(num) +1;
+
+        SquareButton button = boardButtons[l-1][w-1];
+        //place random number on random available square
+        if (boardButtons[l-1][w-1].getText().toString().trim().length() == 0 && c.checkIfValid(button, boardButtons, String.valueOf(n)) && numberButtons[n-1].isEnabled())
+        {
+            button.setText(String.valueOf(n));
+            button.setBackgroundColor(0xff1e90ff);
+            numberButtons[n-1].setEnabled(false);
+            numberButtons[n-1].setBackgroundColor(Color.WHITE);
+
+            turn = 1;
+        }
+        else
+            naiveAI2(number, boardButtons, numberButtons);
+
+    }
 
 
 }
