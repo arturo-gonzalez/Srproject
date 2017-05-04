@@ -146,12 +146,14 @@ public class vscomputerNaive extends AppCompatActivity {
                                 clicked = false;
                                 currButton.setEnabled(false);
                                 changeColor(button);
-
                                 checkForWin(turn, number, boardButtons, numberButtons, availableButtons);
+                                turn=2;
                                 alert.setText(Integer.toString(availableButtons.size()));
                                 if(gameover == false)
                                 {
                                     naiveAI2(number, boardButtons, numberButtons);
+                                    checkForWin(turn, number, boardButtons, numberButtons, availableButtons);
+                                    turn = 1;
                                 }
 
                             }
@@ -213,7 +215,6 @@ public class vscomputerNaive extends AppCompatActivity {
     void changeColor(Button btn)
     {
         btn.setBackgroundColor(0xffff6347);
-        turn = 2;
     }
 
     ////////////////////////////////////////////////////////////////
@@ -359,8 +360,6 @@ public class vscomputerNaive extends AppCompatActivity {
             button.setBackgroundColor(0xff1e90ff);
             numberButtons[n-1].setEnabled(false);
             numberButtons[n-1].setBackgroundColor(Color.WHITE);
-
-            turn = 1;
         }
         else
             naiveAI2(number, boardButtons, numberButtons);
