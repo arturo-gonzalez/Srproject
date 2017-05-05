@@ -12,13 +12,17 @@ public class StateTree {
 
     public StateTree(BoardState rootData){
         root = new StateTreeNode();
-        root.data = rootData;
+        root.board = rootData;
         root.children = new ArrayList<StateTreeNode>();
+        root.visits = 0;
+        root.score = 0;
     }
 
     public static class StateTreeNode{
-        private BoardState data;
-        private StateTreeNode parent;
-        private List<StateTreeNode> children;
+        public BoardState board;
+        public StateTreeNode parent;
+        public List<StateTreeNode> children;
+        public int visits;
+        public double score;
     }
 }

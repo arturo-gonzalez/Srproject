@@ -17,8 +17,10 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
+import java.lang.Math;
 
 import static com.arigon.srproject.R.layout.twoplayervs;
+import com.arigon.srproject.StateTree;
 
 
 /**
@@ -305,45 +307,29 @@ public class vscomputer extends AppCompatActivity {
         return availableButtons;
     }
 
-    //test
-    public void naiveAI(int number, SquareButton[][] boardButtons,  List<Button> availableButtons)
+    public void MonteCarlo(int number, SquareButton[][] boardButtons, Button[] numberButtons)
     {
-        int availablespots = 0;
-        boolean broke = false;
-        for(int i = 0; i<number;i++)
-        {
-            for(int j = 0; j<number;j++)
-            {
-                availablespots++;
-                for(int k = 0;k<availableButtons.size();k++)
-                {
-                    if(c.checkIfValid(boardButtons[i][j], boardButtons, availableButtons.get(k).getText().toString())&&((i % 2 == 0 && j%2==0)||(i % 2 == 1 && j%2==1)))
-                    {
-                        boardButtons[i][j].setText(availableButtons.get(k).getText());
-                        availablespots--;
-                        if(availablespots%2 == 0)
-                        {
-                            boardButtons[i][j].setText("");
-                            availablespots++;
+        //create parent node
 
-                        }
-                        else if(availablespots%2==1)
-                        {
-                            availableButtons.remove(k);
-                            broke=true;
-                            break;
-                        }
-                    }
-                }
-                if (broke)
-                    break;
-            }
-            if (broke)
-                break;
-        }
+        //create child nodes
 
+        //Monte Carlo officially starts here
+
+            //use UCB1 to traverse child nodes until leaf node is reached
+
+            //rollout
+
+            //backpropogation
+
+            //run until a condition has been met
     }
 
+    public double UCB1(StateTree.StateTreeNode node)
+    {
+
+        return node.score +                                                 //Exploitation
+                2 * Math.sqrt(Math.log(node.parent.visits)/node.visits);    //Exploration
+    }
 
 
 }
