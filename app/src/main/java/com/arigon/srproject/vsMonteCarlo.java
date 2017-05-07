@@ -16,20 +16,20 @@ import android.widget.TextView;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
 import java.lang.Math;
 
 import static com.arigon.srproject.R.layout.twoplayervs;
-import com.arigon.srproject.StateTree;
 
 
 /**
  * Created by art on 3/15/2017.
  */
 
-public class vscomputer extends AppCompatActivity {
+public class vsMonteCarlo extends AppCompatActivity {
 
+    //the vertical size of the board
     public int lsize = 7;
+    //the horizontal size of the board
     public  int wsize = 7;
 
     boolean clicked = false;
@@ -68,7 +68,7 @@ public class vscomputer extends AppCompatActivity {
             {
                 if(v.getId() == R.id.exitButton)
                 {
-                    Intent i = new Intent(vscomputer.this, menu.class);
+                    Intent i = new Intent(vsMonteCarlo.this, menu.class);
                     startActivity(i);
                 }
             }
@@ -124,7 +124,7 @@ public class vscomputer extends AppCompatActivity {
             numberboard.addView(numrow, TableLayout.LayoutParams.MATCH_PARENT, TableLayout.LayoutParams.WRAP_CONTENT);
         }
 
-        //create a list of numbers to check for avaialbe numbers
+        //create a list of numbers to check for available numbers
         final List<Button> availableButtons = new LinkedList<>(Arrays.asList(numberButtons));
         //final List<Button> availableButtons  = Arrays.asList(numberButtons);
 
@@ -146,8 +146,12 @@ public class vscomputer extends AppCompatActivity {
                                 clicked = false;
                                 currButton.setEnabled(false);
                                 changeColor(button);
+                                checkAvailableNumbers(numberButtons,availableButtons);
+                                if(checkForWin(turn, number, boardButtons, availableButtons))
+                                {
+                                    winMessage();
+                                }
 
-                                checkForWin(turn, number, boardButtons, numberButtons, availableButtons);
                                 alert.setText(Integer.toString(availableButtons.size()));
                                 if(turn ==1) {
                                     turn = 2;
@@ -228,22 +232,13 @@ public class vscomputer extends AppCompatActivity {
     //check if board is full
     //check if one player has no moves left
     ////////////////////////////////////////////////////////////////
-    public void checkForWin(int turn, int number, SquareButton[][] boardButtons, Button[] numberButtons,  List<Button> availableButtons)
+    public boolean checkForWin(int turn, int number, SquareButton[][] boardButtons, List<Button> availableButtons)
     {
-        checkAvailableNumbers(numberButtons,availableButtons);
+
         lsize=number;
         wsize=number;
         boolean full = true;
         boolean valid = true;
-        String message = "";
-        if(turn==1)
-        {
-            message = "Red Wins";
-        }
-        else if (turn == 2)
-        {
-            message = "Blue Wins";
-        }
 
         //check if the board is full
         for(int i=0;i<lsize;i++)
@@ -272,28 +267,37 @@ public class vscomputer extends AppCompatActivity {
             }
 
         }
-        if(valid)
-        {
-
-            AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
-            myAlert.setMessage(message)
-                    .setPositiveButton("OK",new DialogInterface.OnClickListener(){
-                        @Override
-                        public void onClick(DialogInterface dialog, int which)
-                        {
-                            dialog.dismiss();
-                            Intent i = new Intent(vscomputer.this, menu.class);
-                            startActivity(i);
-                        }
-                    })
-                    .create();
-            myAlert.show();
-
-        }
+        return valid;
 
     }
 
-    //cretes a list of available buttons (buttons that are still enabled)
+    public void winMessage()
+    {
+        String message = "";
+        if(turn==1)
+        {
+            message = "Red Wins";
+        }
+        else if (turn == 2)
+        {
+            message = "Blue Wins";
+        }
+        AlertDialog.Builder myAlert = new AlertDialog.Builder(this);
+        myAlert.setMessage(message)
+                .setPositiveButton("OK",new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        dialog.dismiss();
+                        Intent i = new Intent(vsMonteCarlo.this, menu.class);
+                        startActivity(i);
+                    }
+                })
+                .create();
+        myAlert.show();
+    }
+
+    //creates a list of available buttons (buttons that are still enabled)
     List<Button> checkAvailableNumbers(Button[] numberButtons, List<Button> availableButtons)
     {
         availableButtons.clear();//clear the list
@@ -307,23 +311,183 @@ public class vscomputer extends AppCompatActivity {
         return availableButtons;
     }
 
-    public void MonteCarlo(int number, SquareButton[][] boardButtons, Button[] numberButtons)
+    public void MonteCarlo(int player, int number, SquareButton[][] boardButtons, List<Button> availableButtons)
     {
-        //create parent node
+        int opposingPlayer;
+        if(player == 1)
+        {
+            opposingPlayer = 2;
+        }else
+        {
+            opposingPlayer = 1;
+        }
+        //create tree from current board, adds root node automatically
+        StateTree aiTree = new StateTree(new BoardState(boardButtons, availableButtons), player);
 
         //create child nodes
 
+        //current working node
+        StateTree.StateTreeNode curNode = aiTree.root;
+        StateTree.StateTreeNode temporary;
+
+        //loops through each space on the BoardState
+        for(int i = 0; i < lsize; i++)
+        {
+            for(int j = 0; j < wsize; j++)
+            {
+                //check if the current space is not empty, skips to the next space if is is
+                if(curNode.game.curBoard[i][j].getText() != "")
+                {
+                    continue;
+                }
+
+                //loops through the numberboard of the BoardState
+                for(int k = 0; k < curNode.game.curNumbers.size(); k++)
+                {
+                    //check if the number is disabled, skips to the next button if it is
+                    if(!curNode.game.curNumbers.get(k).isEnabled())
+                    {
+                        continue;
+                    }
+
+                    //check if the number can be placed in that space
+                    if(c.checkIfValid(curNode.game.curBoard[i][j],                   //board space
+                            curNode.game.curBoard,                                   //board
+                            curNode.game.curNumbers.get(k).getText().toString()))    //number
+                    {
+                        //create the child by cloning parent board data
+                        temporary = new StateTree.StateTreeNode(curNode.game, opposingPlayer);
+                        temporary.game.curBoard[i][j].setText(curNode.game.curNumbers.get(k).getText());
+                        temporary.game.curNumbers.remove(k);
+
+                        //and add the parent (important for back propagation
+                        temporary.parent = curNode;
+
+                        //add child
+                        curNode.children.add(temporary);
+
+                    }
+
+                }
+
+            }
+        }
+        //root node should have all possible children by now
+
         //Monte Carlo officially starts here
 
-            //use UCB1 to traverse child nodes until leaf node is reached
+        Double uNumber;
+        int uChild;
+        double temp;
+        double valueBackProp;
+        for(int loops = 0; loops < 1000; loops++)
+        {
+            //reset current node to the root
+            curNode = aiTree.root;
+            valueBackProp = 0;
 
-            //rollout
+            //Use UCB1 to traverse child nodes until leaf node is reached
+            while(true) {
+                //if there are no children in the current Node, start the rollout
+                if (curNode.children.isEmpty()) {
+                    break;
+                }
+                //loop through the list of children
+                uNumber = UCB1(curNode.children.get(0));
+                uChild = 0;
 
-            //backpropogation
 
-            //run until a condition has been met
+
+                for (int n = 1; n < curNode.children.size(); n++) {
+                    temp = UCB1(curNode.children.get(n));
+
+                    //when it is the first player's "turn", they want the largest UCB1 value
+                    if (curNode.player == player && temp > uNumber) {
+                        uNumber = temp;
+                        uChild = n;
+                    }else if(curNode.player == opposingPlayer && temp < uNumber) //the second player wants the smallest UCB1 value
+                    {
+                        uNumber = temp;
+                        uChild = n;
+                    }
+                }
+                //the one with the largest or smallest UCB1 value becomes the current Node
+                curNode = curNode.children.get(uChild);
+            }
+
+
+            //when there are no children (at a leaf node), there is a rollout
+
+            //if this is a terminal node, forget it
+            if(!checkForWin(curNode.player,number, curNode.game.curBoard, curNode.game.curNumbers)) {
+
+                //if this isn't the first time "visiting" a node, then actions are generated for the child node before we rollout
+                if (curNode.visits > 0) {
+                    //this code is exactly like the code needed for the root node
+                    for (int i = 0; i < lsize; i++) {
+                        for (int j = 0; j < wsize; j++) {
+                            //check if the current space is not empty, skips to the next space if is is
+                            if (curNode.game.curBoard[i][j].getText() != "") {
+                                continue;
+                            }
+
+                            //loops through the numberboard of the BoardState
+                            for (int k = 0; k < curNode.game.curNumbers.size(); k++) {
+                                //check if the number is disabled, skips to the next button if it is
+                                if (!curNode.game.curNumbers.get(k).isEnabled()) {
+                                    continue;
+                                }
+
+                                //check if the number can be placed in that space
+                                if (c.checkIfValid(curNode.game.curBoard[i][j],              //board space
+                                        curNode.game.curBoard,                              //board
+                                        curNode.game.curNumbers.get(k).getText().toString()))   //number
+                                {
+                                    //create the child by cloning parent board data
+                                    if (curNode.player == 1)
+                                        temporary = new StateTree.StateTreeNode(curNode.game, 2);
+                                    else
+                                        temporary = new StateTree.StateTreeNode(curNode.game, 1);
+
+                                    //then apply the move
+                                    temporary.game.curBoard[i][j].setText(curNode.game.curNumbers.get(k).getText());
+                                    temporary.game.curNumbers.get(k).setEnabled(false);
+
+                                    //and add the parent (important for back propagation
+                                    temporary.parent = curNode;
+
+                                    //add child
+                                    curNode.children.add(temporary);
+
+                                }
+
+                            }
+
+                        }
+                    }
+
+                }
+
+                //now there is a rollout, the AI plays the game with itself using random moves, the end result for the game is back propogated to the beginning
+                
+            }
+
+            //backpropogation, all the nodes that were visited get a their values updated
+            while(curNode.parent != null)
+            {
+                curNode.visits++;
+                curNode.score += valueBackProp;
+                curNode = curNode.parent;
+            }
+            curNode.visits++;
+            curNode.score += valueBackProp;
+        }
+
+
+            //run until a condition has been met, in this case it's just 1000 loops
     }
 
+    //tweak UCB1 if necessary
     public double UCB1(StateTree.StateTreeNode node)
     {
 

@@ -3,7 +3,6 @@ package com.arigon.srproject;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
@@ -102,7 +101,7 @@ public class menu extends AppCompatActivity {
                         {
                             m_Text = Integer.valueOf(input.getText().toString());
                             dialog.dismiss();
-                            Intent i = new Intent(menu.this, vscomputer.class);
+                            Intent i = new Intent(menu.this, vsMonteCarlo.class);
                             i.putExtra("num", m_Text);
                             startActivity(i);
                         }
