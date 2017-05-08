@@ -312,7 +312,7 @@ public class vsMonteCarlo extends AppCompatActivity {
         return availableButtons;
     }
 
-    public void MonteCarlo(int player, int number, SquareButton[][] boardButtons, List<Button> availableButtons)
+    public void MonteCarlo(int player, int number, SquareButton[][] boardButtons, List<Button> availableButtons, Button[] numberBoard)
     {
         int opposingPlayer;
         if(player == 1)
@@ -358,6 +358,12 @@ public class vsMonteCarlo extends AppCompatActivity {
                     {
                         //create the child by cloning parent board data
                         temporary = new StateTree.StateTreeNode(curNode.game, opposingPlayer);
+
+                        //edit into desired state
+                        temporary.vertLastAction = i;
+                        temporary.horizLastAction = j;
+                        temporary.numLastAction = curNode.game.curNumbers.get(k).getText().toString();
+
                         temporary.game.curBoard[i][j].setText(curNode.game.curNumbers.get(k).getText());
                         temporary.game.curNumbers.remove(k);
 
@@ -396,8 +402,6 @@ public class vsMonteCarlo extends AppCompatActivity {
                 //loop through the list of children
                 uNumber = UCB1(curNode.children.get(0));
                 uChild = 0;
-
-
 
                 for (int n = 1; n < curNode.children.size(); n++) {
                     temp = UCB1(curNode.children.get(n));
@@ -485,6 +489,24 @@ public class vsMonteCarlo extends AppCompatActivity {
             curNode.score += valueBackProp;
         }
 
+        //get the result
+        uNumber = UCB1(curNode.children.get(0));
+        uChild = 0;
+
+        for (int n = 1; n < curNode.children.size(); n++) {
+            temp = UCB1(curNode.children.get(n));
+
+            //when it is the first player's "turn", they want the largest UCB1 value
+            if (temp > uNumber) {
+                uNumber = temp;
+                uChild = n;
+            }
+        }
+        curNode = curNode.children.get(uChild);
+        boardButtons[curNode.vertLastAction][curNode.horizLastAction].setText(curNode.numLastAction);
+        boardButtons[curNode.vertLastAction][curNode.horizLastAction].setBackgroundColor(0xff1e90ff);
+        numberBoard[Integer.parseInt(curNode.numLastAction)-1].setEnabled(false);
+        numberBoard[Integer.parseInt(curNode.numLastAction)-1].setBackgroundColor(Color.WHITE);
 
             //run until a condition has been met, in this case it's just 1000 loops
     }
