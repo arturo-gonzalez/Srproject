@@ -17,6 +17,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.lang.Math;
+import java.util.Random;
 
 import static com.arigon.srproject.R.layout.twoplayervs;
 
@@ -422,7 +423,8 @@ public class vsMonteCarlo extends AppCompatActivity {
             if(!checkForWin(curNode.player,number, curNode.game.curBoard, curNode.game.curNumbers)) {
 
                 //if this isn't the first time "visiting" a node, then actions are generated for the child node before we rollout
-                if (curNode.visits > 0) {
+                if (curNode.visits > 0)
+                {
                     //this code is exactly like the code needed for the root node
                     for (int i = 0; i < lsize; i++) {
                         for (int j = 0; j < wsize; j++) {
@@ -468,11 +470,11 @@ public class vsMonteCarlo extends AppCompatActivity {
 
                 }
 
-                //now there is a rollout, the AI plays the game with itself using random moves, the end result for the game is back propogated to the beginning
-                
+                //now there is a rollout, the AI plays the game with itself using random moves, the end result for the game is back propagated to the beginning
+                valueBackProp = rollout(curNode);
             }
 
-            //backpropogation, all the nodes that were visited get a their values updated
+            //back propagation, all the nodes that were visited get a their values updated
             while(curNode.parent != null)
             {
                 curNode.visits++;
@@ -485,6 +487,40 @@ public class vsMonteCarlo extends AppCompatActivity {
 
 
             //run until a condition has been met, in this case it's just 1000 loops
+    }
+
+    public int rollout(StateTree.StateTreeNode inNode)
+    {
+        //make a copy of the Node we're beginning the rollout from
+        StateTree.StateTreeNode curNode = new StateTree.StateTreeNode(inNode.game,inNode.player);
+
+        Random rand = new Random();
+        int vert = rand.nextInt(lsize);
+        int horiz = rand.nextInt(wsize);
+        int pl;
+        String play;
+        //game randomly plays moves until a result comes in
+        while(!checkForWin(curNode.player, lsize, curNode.game.curBoard, curNode.game.curNumbers))
+        {
+            //get a random valid position on the board
+            while(curNode.game.curBoard[vert][horiz].getText() == "") {
+                vert = rand.nextInt(lsize);
+                horiz = rand.nextInt(wsize);
+            }
+            //get a random number from the available number at that position
+            pl = rand.nextInt(curNode.game.curNumbers.size());
+            play = curNode.game.curNumbers.get(pl).getText().toString();
+            if(c.checkIfValid(curNode.game.curBoard[vert][horiz], curNode.game.curBoard, play))
+            {
+                curNode.game.curBoard[vert][horiz].setText(play);
+
+            }
+        }
+
+        if(curNode.player == 1)
+            return -1;
+        else
+            return  1;
     }
 
     //tweak UCB1 if necessary
