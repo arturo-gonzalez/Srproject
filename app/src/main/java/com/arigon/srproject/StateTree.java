@@ -26,6 +26,9 @@ public class StateTree {
         public ArrayList<StateTreeNode> children;
         public int visits;
         public double score;
+        public int vertLastAction;
+        public int horizLastAction;
+        public String numLastAction;
 
         //constructor for node, sets up the data
         public StateTreeNode(BoardState data, int inPlayer)

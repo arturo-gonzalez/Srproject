@@ -24,7 +24,7 @@
         </activity>
         <activity android:name=".singleplayer2">
         </activity>
-        <activity android:name=".vscomputer">
+        <activity android:name=".vsMonteCarlo">
         </activity>
         <activity android:name=".vscomputerNaive">
         </activity>
