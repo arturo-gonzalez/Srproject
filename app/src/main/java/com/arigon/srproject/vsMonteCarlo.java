@@ -39,6 +39,7 @@ public class vsMonteCarlo extends AppCompatActivity {
     check2 c = new check2();
     //players turn
     int turn = 1;
+    boolean gameover = false;
 
 
 
@@ -152,15 +153,18 @@ public class vsMonteCarlo extends AppCompatActivity {
                                 {
                                     winMessage();
                                 }
-
+                                turn = 2;
                                 alert.setText(Integer.toString(availableButtons.size()));
-                                if(turn ==1) {
-                                    turn = 2;
-                                }
-                                else if(turn==2)
+                                if(gameover == false)
                                 {
-                                    turn  = 1;
+                                    MonteCarlo(2, number, boardButtons, availableButtons, numberButtons);
+                                    checkAvailableNumbers(numberButtons,availableButtons);
+                                    if(checkForWin(turn, number, boardButtons, availableButtons))
+                                    {
+                                        winMessage();
+                                    }
                                 }
+
                             }
                             else
                                 alert.setText("Not a valid move");
@@ -296,6 +300,7 @@ public class vsMonteCarlo extends AppCompatActivity {
                 })
                 .create();
         myAlert.show();
+        gameover = true;
     }
 
     //creates a list of available buttons (buttons that are still enabled)
